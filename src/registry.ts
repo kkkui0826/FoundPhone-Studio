@@ -154,6 +154,7 @@ const definitions: [
     ["首页", "订阅", "播放列表"],
   ],
   ["line", "LINE", "messaging", "#5db873", MessageCircle, ["聊天", "好友"]],
+  ["grab", "Grab", "records", "#00b14f", Utensils, ["首页", "出行", "外卖", "订单", "我的"]],
   ["snapchat", "Snapchat", "social", "#ccbb49", Camera, ["动态", "回忆"]],
   ["facebook", "Facebook", "social", "#587bb5", Users, ["动态", "个人主页"]],
   [

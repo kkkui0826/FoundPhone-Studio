@@ -1,14 +1,10 @@
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { ArrowLeft, CheckCheck, CirclePlus, Heart, MessageCircle, Search, Send, Users } from "lucide-react";
 import { useSkinState } from "../skinState";
 import type { Item } from "../schema";
 import { Avatar, Empty, Header, SearchBox, Tabs, type Props } from "./shared";
 
 export function LineInteractiveSkin(p: Props) {
-  const { tab, setTab, q, setQ, items } = useMemo(() => {
-    const filtered = p.items.filter(i => (i.title+i.body+i.sender).toLowerCase().includes(""));
-    return { tab: "", setTab: (_: string) => {}, q: "", setQ: (_: string) => {}, items: filtered };
-  }, [p.items]);
   const [activeTab, setActiveTab] = useState("聊天");
   const [search, setSearch] = useState("");
   const [draft, setDraft] = useState("");

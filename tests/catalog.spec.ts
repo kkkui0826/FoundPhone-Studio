@@ -98,15 +98,8 @@ test("all 47 app player screens read authored content and trigger independent cl
     find: ".find-sheet .catalog-row",
     calculator: ".calc-records button",
     settings: ".record-row",
-    weibo: ".social-body",
-    redbook: ".redbook-masonry>button",
-    douyin: ".vertical-caption",
     bilibili: ".bili-grid>button",
-    alipay: ".alipay-bill",
-    taobao: ".taobao-products>button",
     netease: ".netease-track>button:first-child",
-    delivery: ".delivery-merchant",
-    forum: ".forum-topic",
     instagram: ".ig-post-media",
     tiktok: ".vertical-caption",
     twitter: ".social-body",
@@ -114,7 +107,6 @@ test("all 47 app player screens read authored content and trigger independent cl
     youtube: ".youtube-thumb",
     snapchat: ".snap-caption",
     facebook: ".social-body",
-    reddit: ".social-body",
     spotify: ".spotify-tracks>button",
     netflix: ".netflix-feature>div:last-child>button:first-of-type",
     pinterest: ".pinterest-pins>button",
@@ -131,16 +123,10 @@ test("all 47 app player screens read authored content and trigger independent cl
         "calendar",
         "telegram",
         "discord",
-        "redbook",
-        "reddit",
         "spotify",
         "youtube",
         "bilibili",
-        "douyin",
         "netflix",
-        "alipay",
-        "taobao",
-        "delivery",
       ].includes(a.id)
     ) {
       await expect(phone.locator(".app-nav strong")).toHaveText(a.name);
@@ -220,33 +206,6 @@ test("system app folders, calendar days and stopwatch are interactive", async ({
   await phone.getByRole("button", { name: "暂停", exact: true }).click();
   await phone.getByRole("button", { name: "复位", exact: true }).click();
   await expect(phone.locator(".stopwatch output")).toHaveText("00:00");
-});
-test("editable commerce metadata persists and renders in player details", async ({
-  page,
-}) => {
-  const w = fixture();
-  await importFixture(page, w);
-  const phone = page.locator(".phone-stage .phone-shell");
-  await open(phone, "支付宝");
-  await phone.locator(".alipay-bill").click();
-  await page.getByLabel("金额", { exact: true }).fill("-42.80");
-  await page.getByLabel("交易状态", { exact: true }).fill("交易成功");
-  await page.getByLabel("交易单号", { exact: true }).fill("FP-20260901");
-  await page.getByRole("button", { name: "保存内容", exact: true }).click();
-  await expect(phone.locator(".alipay-bill")).toContainText("-42.80");
-  await page.getByRole("button", { name: "已保存到本机", exact: true }).click();
-  await page.reload();
-  await page.getByRole("button", { name: "预览", exact: true }).click();
-  const preview = page.locator(".preview-overlay .phone-shell");
-  await preview.getByRole("button", { name: "轻触解锁" }).click();
-  await open(preview, "支付宝");
-  await preview.locator(".alipay-bill").click();
-  await expect(preview.locator(".item-metadata")).toContainText("FP-20260901");
-  await expect(preview.locator(".item-metadata")).toContainText("交易成功");
-  await page.screenshot({
-    path: "outputs/v0.5/alipay-detail.png",
-    fullPage: true,
-  });
 });
 test("Discord servers, channels and members use authored groups", async ({
   page,

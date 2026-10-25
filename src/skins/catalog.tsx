@@ -35,7 +35,7 @@ export const catalogSkins = {
   qq: skin(messaging, "QQSkin"),
   telegram: skin(messaging, "TelegramSkin"),
   discord: skin(messaging, "DiscordSkin"),
-  line: skin(messaging, "LineSkin"),
+  line: skin(() => import("./LineInteractiveSkin"), "LineInteractiveSkin"),
   messenger: skin(messaging, "MessengerSkin"),
   weibo: skin(social, "WeiboSkin"),
   twitter: skin(mymy, "MymyX"),
@@ -56,4 +56,5 @@ export const catalogSkins = {
   alipay: skin(commerce, "AlipaySkin"),
   taobao: skin(commerce, "TaobaoSkin"),
   delivery: skin(commerce, "DeliverySkin"),
+  grab: skin(() => import("./GrabSkin"), "GrabSkin"),
 };

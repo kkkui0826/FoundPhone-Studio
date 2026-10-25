@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Bike, CheckCircle2, Clock3, MapPin, ShoppingBag, Utensils } from "lucide-react";
+import { Bike, CheckCircle2, MapPin, ShoppingBag, Utensils } from "lucide-react";
 import { useSkinState } from "../skinState";
-import { Empty, Header, Media, SearchBox, Tabs, meta, type Props } from "./shared";
+import { Empty, Header, Media, SearchBox, Tabs, type Props } from "./shared";
 
 export function GrabSkin(p: Props) {
   const [tab,setTab] = useState("首页");

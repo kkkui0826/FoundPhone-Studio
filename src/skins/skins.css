@@ -4130,3 +4130,44 @@
 .catalog-slot[hidden] {
   display: none;
 }
+
+
+/* Interactive LINE and Grab demo skins */
+.line-interactive { --app-accent: #06c755; }
+.line-interactive .line-peer-bar { display:flex; align-items:center; gap:9px; padding:8px 12px; border-bottom:1px solid #e8e8e8; background:#fff; }
+.line-peer-bar > button { display:grid; place-items:center; padding:5px; }
+.line-peer-bar .catalog-avatar { width:32px; height:32px; }
+.line-peer-bar strong { font-size:13px; flex:1; }
+.line-peer-bar > span:last-child { font-size:9px; color:#8b9690; }
+.line-interactive .line-bubbles { flex:1; min-height:0; overflow:auto; padding:12px 10px 20px; }
+.line-interactive .catalog-message > button { cursor:pointer; max-width:84%; overflow-wrap:anywhere; }
+.line-interactive .line-live-composer { display:flex; align-items:center; gap:8px; padding:9px 12px calc(10px + env(safe-area-inset-bottom)); background:#f8f9f8; border-top:1px solid #e8e8e8; }
+.line-live-composer input { flex:1; min-width:0; border:0; outline:none; border-radius:20px; background:#fff; padding:10px 13px; font:inherit; font-size:12px; color:#222; }
+.line-live-composer button { display:grid; place-items:center; border-radius:50%; width:34px; height:34px; color:#fff; background:#06c755; }
+.line-live-composer button:disabled { opacity:.45; }
+.line-reaction { display:flex; align-items:center; gap:4px; color:#e35b79; font-size:9px; margin-top:5px; }
+.grab-ui { --app-accent:#00a84f; background:#f5f7f5; }
+.grab-welcome { background:#00a84f; color:#fff; padding:18px 16px 20px; }
+.grab-welcome small { font-size:10px; opacity:.9; }
+.grab-welcome h2 { font-size:22px; line-height:1.35; margin:8px 0 14px; }
+.grab-location { display:flex; align-items:center; gap:8px; border-radius:9px; background:#fff; color:#27352d; padding:12px; font-size:11px; }
+.grab-services { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; padding:14px; }
+.grab-services button { display:flex; flex-direction:column; align-items:flex-start; gap:6px; border-radius:12px; padding:12px 10px; background:#fff; text-align:left; box-shadow:0 2px 8px #00000008; }
+.grab-services button span { display:grid; place-items:center; width:40px; height:40px; border-radius:11px; color:#009c49; background:#e3f7eb; }
+.grab-services strong { font-size:11px; }
+.grab-services small,.grab-muted { color:#87918a; font-size:9px; }
+.grab-orders { padding:10px 14px 22px; }
+.grab-orders h3,.grab-panel h3 { font-size:15px; margin:8px 0 12px; }
+.grab-record { display:block; width:100%; text-align:left; background:#fff; padding:12px; margin-bottom:8px; border-radius:10px; }
+.grab-record strong { font-size:12px; }
+.grab-record p,.grab-panel p,.grab-orders p { font-size:10px; line-height:1.6; color:#66716a; white-space:pre-line; }
+.grab-record small { font-size:9px; color:#99a19b; }
+.grab-panel { margin:0 14px 20px; padding:16px; border-radius:13px; background:#fff; }
+.grab-action { display:flex; justify-content:center; align-items:center; gap:7px; width:100%; border-radius:9px; background:#00a84f; color:#fff; padding:12px; font-size:11px; margin-top:12px; }
+.grab-success { color:#008e43!important; font-size:10px; }
+.grab-food { display:flex; gap:10px; align-items:center; text-align:left; width:100%; padding:10px; background:#fff; border-radius:10px; margin-bottom:8px; }
+.grab-food .catalog-art { width:64px; height:64px; flex-shrink:0; border-radius:8px; }
+.grab-food > span { min-width:0; }
+.grab-food strong { font-size:11px; }
+.grab-food p { font-size:9px; white-space:pre-line; color:#66716a; }
+.grab-food small { color:#9aa39c; font-size:9px; }

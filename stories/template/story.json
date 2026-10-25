@@ -3,9 +3,9 @@
   "id": "ui-test-phone-v2",
   "title": "捡手机",
   "description": "仅用于界面测试，不含剧情",
-  "revision": 2,
+  "revision": 3,
   "phone": {
-    "owner": "机主",
+    "owner": "mo✨",
     "date": "2026-10-25",
     "time": "09:41",
     "battery": 94,
@@ -77,6 +77,7 @@
     "discord",
     "youtube",
     "line",
+    "grab",
     "snapchat",
     "facebook",
     "messenger",
@@ -93,6 +94,20 @@
       "name": "测试联系人",
       "phone": "",
       "bio": "这是一条测试内容。"
+    },
+    {
+      "id": "daddy-juju",
+      "name": "daddy juju",
+      "phone": "",
+      "avatar": "",
+      "bio": "LINE 好友"
+    },
+    {
+      "id": "dada-cat",
+      "name": "dada🐱",
+      "phone": "",
+      "avatar": "",
+      "bio": "LINE 好友"
     }
   ],
   "chats": [
@@ -193,22 +208,6 @@
       ]
     },
     {
-      "id": "test-chat-line",
-      "app": "line",
-      "title": "测试会话",
-      "participants": [
-        "owner",
-        "test-contact"
-      ],
-      "messages": [
-        {
-          "id": "test-message-line",
-          "body": "这是一条测试消息。",
-          "senderId": "test-contact"
-        }
-      ]
-    },
-    {
       "id": "test-chat-messenger",
       "app": "messenger",
       "title": "测试会话",
@@ -242,6 +241,120 @@
           "id": "test-reply-kakao",
           "body": "这是一条测试回复。",
           "senderId": "owner"
+        }
+      ]
+    },
+    {
+      "id": "line-daddy-juju",
+      "app": "line",
+      "title": "daddy juju",
+      "participants": [
+        "owner",
+        "daddy-juju"
+      ],
+      "messages": [
+        {
+          "id": "line-daddy-001",
+          "title": "",
+          "body": "到家了吗？今天辛苦啦。",
+          "senderId": "daddy-juju",
+          "time": "20:31",
+          "kind": "text"
+        },
+        {
+          "id": "line-daddy-002",
+          "title": "",
+          "body": "到家啦～你呢？",
+          "senderId": "owner",
+          "time": "20:32",
+          "kind": "text"
+        },
+        {
+          "id": "line-daddy-003",
+          "title": "",
+          "body": "我也快到了，记得先吃点东西。",
+          "senderId": "daddy-juju",
+          "time": "20:33",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "id": "line-dada-cat",
+      "app": "line",
+      "title": "dada🐱",
+      "participants": [
+        "owner",
+        "dada-cat"
+      ],
+      "messages": [
+        {
+          "id": "line-dada-001",
+          "title": "",
+          "body": "mo✨！你在干嘛呀 🐱",
+          "senderId": "dada-cat",
+          "time": "20:35",
+          "kind": "text"
+        },
+        {
+          "id": "line-dada-002",
+          "title": "",
+          "body": "刚忙完，来找你聊天啦～",
+          "senderId": "owner",
+          "time": "20:36",
+          "kind": "text"
+        },
+        {
+          "id": "line-dada-003",
+          "title": "",
+          "body": "那我今天可以申请一个抱抱吗？",
+          "senderId": "dada-cat",
+          "time": "20:36",
+          "kind": "text"
+        }
+      ]
+    },
+    {
+      "id": "line-family-group",
+      "app": "line",
+      "title": "一家三口dada最帅（3）",
+      "participants": [
+        "owner",
+        "daddy-juju",
+        "dada-cat"
+      ],
+      "messages": [
+        {
+          "id": "line-family-001",
+          "title": "",
+          "body": "一家三口集合！今天晚饭吃什么？",
+          "senderId": "daddy-juju",
+          "time": "20:40",
+          "kind": "text"
+        },
+        {
+          "id": "line-family-002",
+          "title": "",
+          "body": "我想吃火锅！🐱",
+          "senderId": "dada-cat",
+          "time": "20:40",
+          "kind": "text"
+        },
+        {
+          "id": "line-family-003",
+          "title": "",
+          "body": "都可以呀～那就火锅！",
+          "senderId": "owner",
+          "time": "20:41",
+          "kind": "text"
+        },
+        {
+          "id": "line-family-004",
+          "title": "",
+          "body": "好，那我来安排。",
+          "senderId": "daddy-juju",
+          "time": "20:42",
+          "kind": "text"
         }
       ]
     }
@@ -529,12 +642,29 @@
     ],
     "instagram": [
       {
-        "id": "test-item-instagram",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
+        "id": "instagram-home-001",
+        "title": "周末的小确幸",
+        "body": "阳光、咖啡和一点点慢下来的时间 ☀️☕",
+        "sender": "mo✨",
+        "kind": "post",
+        "time": "今天 10:24",
+        "meta": {
+          "username": "mo✨",
+          "likes": "128",
+          "comments": "12"
+        }
+      },
+      {
+        "id": "instagram-story-001",
+        "title": "Story",
+        "body": "今日份好心情 ✨",
+        "sender": "mo✨",
+        "kind": "post",
+        "time": "今天 11:02",
+        "meta": {
+          "username": "mo✨",
+          "format": "story"
+        }
       }
     ],
     "tiktok": [
@@ -549,12 +679,30 @@
     ],
     "twitter": [
       {
-        "id": "test-item-twitter",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
-        "meta": {}
+        "id": "x-post-001",
+        "title": "mo✨",
+        "body": "希望今天也有很多值得记录的小事。✨",
+        "sender": "mo✨",
+        "kind": "post",
+        "time": "今天 12:08",
+        "meta": {
+          "username": "mo✨",
+          "likes": "24",
+          "replies": "3"
+        }
+      },
+      {
+        "id": "x-post-002",
+        "title": "dada🐱",
+        "body": "今天也要开心吃饭！🐱",
+        "sender": "dada🐱",
+        "kind": "post",
+        "time": "今天 12:16",
+        "meta": {
+          "username": "dada🐱",
+          "likes": "8",
+          "replies": "2"
+        }
       }
     ],
     "youtube": [
@@ -690,6 +838,32 @@
         "id": "test-appstore",
         "title": "测试内容",
         "body": "这是一条测试内容。"
+      }
+    ],
+    "grab": [
+      {
+        "id": "grab-ride-001",
+        "title": "模拟叫车",
+        "body": "上车点：家附近\n目的地：市中心\n状态：等待确认（演示）",
+        "sender": "Grab",
+        "kind": "order",
+        "time": "今天 18:20",
+        "meta": {
+          "service": "ride",
+          "status": "demo"
+        }
+      },
+      {
+        "id": "grab-food-001",
+        "title": "晚餐订单",
+        "body": "示例订单：晚餐套餐\n状态：尚未下单（演示内容）",
+        "sender": "Grab",
+        "kind": "order",
+        "time": "今天 18:25",
+        "meta": {
+          "service": "food",
+          "status": "demo"
+        }
       }
     ]
   },

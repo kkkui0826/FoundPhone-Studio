@@ -4918,3 +4918,28 @@ label {
   background: #e34f58;
   transform: rotate(135deg);
 }
+
+
+/* Custom family wallpapers requested in issue #1.
+   The lock screen uses photo 1; the unlocked home screen uses photo 2. */
+.wallpaper-family-custom {
+  background-image: url("https://github.com/user-attachments/assets/10aa814b-f809-438a-8d9c-8e63cc1c5a98");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.wallpaper-family-custom .wallpaper-orb {
+  display: none;
+}
+.wallpaper-family-custom:not(.is-locked) {
+  background-image: url("https://github.com/user-attachments/assets/e0193b5d-c20e-4e88-a46a-278ed00e0b63");
+}
+.wallpaper-family-custom.is-locked {
+  background-image: url("https://github.com/user-attachments/assets/10aa814b-f809-438a-8d9c-8e63cc1c5a98");
+}
+.wallpaper-family-custom .home-screen {
+  background: transparent;
+}
+.wallpaper-family-custom .lock-screen {
+  background: transparent;
+}

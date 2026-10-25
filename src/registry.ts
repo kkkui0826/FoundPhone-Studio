@@ -22,7 +22,6 @@ import {
   Video,
   ShoppingBag,
   Utensils,
-  Radio,
   Play,
   Hash,
   Headphones,

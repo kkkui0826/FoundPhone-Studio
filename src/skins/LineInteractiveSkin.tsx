@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowLeft, CheckCheck, CirclePlus, Heart, MessageCircle, Search, Send, Users } from "lucide-react";
+import { ArrowLeft, CheckCheck, CirclePlus, Heart, MessageCircle, Send, Users } from "lucide-react";
 import { useSkinState } from "../skinState";
 import type { Item } from "../schema";
 import { Avatar, Empty, Header, SearchBox, Tabs, type Props } from "./shared";

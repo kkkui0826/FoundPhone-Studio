@@ -108,9 +108,9 @@ describe("import and schema safety", () => {
     expect(r.items[0].body).toBe("你好,世界\n第二行");
     expect(parseCsv("a,b,c\n1,2,3").errors).toHaveLength(1);
   });
-  it("registers all 47 named apps with editable story data", () => {
+  it("registers all 48 named apps with editable story data", () => {
     const w = createWork();
-    expect(registry).toHaveLength(49);
+    expect(registry).toHaveLength(50);
     for (const a of registry) {
       expect(w.apps.some((x) => x.id === a.id)).toBe(true);
       expect(w.data[a.id].length).toBeGreaterThan(0);

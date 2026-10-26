@@ -178,7 +178,7 @@ const definitions: [
     ["好友", "聊天"],
   ],
   ["appstore", "App Store", "system", "#087cff", ShoppingBag, ["搜索"]],
-  ["threads", "Threads", "social", "#4d5150", AtSign, ["动态", "回复"]],
+  ["threads", "Threads", "social", "#4d5150", AtSign, ["动态", "回复", "个人主页"]],
 ];
 export const registry: AppPlugin[] = definitions.map(
   ([id, name, engine, color, icon, tabs]) => ({

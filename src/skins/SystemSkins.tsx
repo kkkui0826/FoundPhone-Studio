@@ -727,47 +727,95 @@ export function FilesSkin(p: Props) {
 export function MusicSkin(p: Props) {
   const { tab, setTab, items } = useContent(p, "资料库");
   const [song, setSong] = useTrack(p, items);
+  const playlistName = "☀️❤️🌙";
+  const playlistItems = items.filter(
+    (i) => meta(i, "playlist") === playlistName || i.folder === playlistName,
+  );
+  const playlists = [...new Set(items.map((i) => meta(i, "playlist", i.folder || "我的音乐")))];
+  const openAppleMusic = (item: Item) => {
+    const url = meta(item, "appleMusicUrl");
+    if (url) window.open(url, "_blank", "noopener,noreferrer");
+  };
   return (
     <div className="catalog-skin native-music">
       <Header p={p} />
       <div className="catalog-scroll">
         <h1>{tab}</h1>
         {tab === "歌单" ? (
-          <div className="music-albums">
-            {groupItems(items, "我的音乐").map((g) => (
+          <>
+            {playlists.includes(playlistName) && (
               <button
-                key={g}
-                onClick={() => {
-                  const i = items.find((i) => (i.folder || "我的音乐") === g);
-                  if (i) setSong(i);
-                }}
+                className="music-playlist-featured"
+                onClick={() => setSong(playlistItems[0] ?? null)}
               >
-                <Music size={51} />
-                <strong>{g}</strong>
+                <span className="music-playlist-art">☀️❤️🌙</span>
+                <span>
+                  <strong>{playlistName}</strong>
+                  <small>{playlistItems.length} 首歌曲 · Apple Music 链接</small>
+                </span>
+                <ChevronRight size={20} />
               </button>
-            ))}
-          </div>
+            )}
+            <div className="music-albums">
+              {playlists.filter((g) => g !== playlistName).map((g) => (
+                <button
+                  key={g}
+                  onClick={() => {
+                    const i = items.find((i) => meta(i, "playlist", i.folder || "我的音乐") === g);
+                    if (i) setSong(i);
+                  }}
+                >
+                  <Music size={51} />
+                  <strong>{g}</strong>
+                </button>
+              ))}
+            </div>
+            {playlistItems.length > 0 && (
+              <section className="music-playlist-tracks">
+                <h2>{playlistName}</h2>
+                {playlistItems.map((i, n) => (
+                  <div className="music-track-wrap" key={i.id}>
+                    <button
+                      className="music-track"
+                      onClick={() => setSong(i)}
+                    >
+                      <small>{n + 1}</small>
+                      <span>
+                        <strong>{i.title}</strong>
+                        <small>{i.sender}{meta(i, "album") ? ` · ${meta(i, "album")}` : ""}</small>
+                      </span>
+                      <span>{meta(i, "duration")}</span>
+                    </button>
+                    {meta(i, "appleMusicUrl") && (
+                      <button className="music-apple-link" onClick={() => openAppleMusic(i)}>
+                        在 Apple Music 中打开 ↗
+                      </button>
+                    )}
+                  </div>
+                ))}
+              </section>
+            )}
+          </>
         ) : (
           items.map((i, n) => (
-            <button
-              className="music-track"
-              key={i.id}
-              onClick={() => {
-                setSong(i);
-              }}
-            >
-              <small>{n + 1}</small>
-              <span>
-                <strong>{i.title}</strong>
-                <small>
-                  {i.sender} · {meta(i, "album")}
-                </small>
-              </span>
-              <span>{meta(i, "duration")}</span>
-            </button>
+            <div className="music-track-wrap" key={i.id}>
+              <button className="music-track" onClick={() => setSong(i)}>
+                <small>{n + 1}</small>
+                <span>
+                  <strong>{i.title}</strong>
+                  <small>{i.sender}{meta(i, "album") ? ` · ${meta(i, "album")}` : ""}</small>
+                </span>
+                <span>{meta(i, "duration")}</span>
+              </button>
+              {meta(i, "appleMusicUrl") && (
+                <button className="music-apple-link" onClick={() => openAppleMusic(i)}>
+                  在 Apple Music 中打开 ↗
+                </button>
+              )}
+            </div>
           ))
         )}
-        <Empty items={items} />
+        <Empty items={items} label="暂时没有歌曲" />
       </div>
       {song && (
         <div className="native-now-playing">
@@ -778,17 +826,14 @@ export function MusicSkin(p: Props) {
           {song.kind === "audio" && safeMedia(song.media) ? (
             <AudioPlayer p={p} item={song} />
           ) : (
-            <button onClick={() => p.onItem(song)}>查看歌曲内容</button>
+            <button onClick={() => openAppleMusic(song)}>在 Apple Music 中打开 ↗</button>
           )}
           <button
             aria-label="下一首"
-            onClick={() =>
-              setSong(
-                items[
-                  (items.findIndex((i) => i.id === song.id) + 1) % items.length
-                ],
-              )
-            }
+            onClick={() => {
+              const current = items.findIndex((i) => i.id === song.id);
+              setSong(items[(current + 1) % items.length] ?? null);
+            }}
           >
             <SkipForward size={18} />
           </button>

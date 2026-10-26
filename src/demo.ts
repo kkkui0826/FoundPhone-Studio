@@ -150,6 +150,24 @@ export function createWork(title = "雨停之前"): Work {
       body: "mo的秘密空间",
       meta: { username: "OMMUJJ", bio: "mo的秘密空间" },
       kind: "post",
+      folder: "个人主页",
+      time: "2026-10-20 08:00",
+    }),
+    makeItem({
+      id: "threads-post-20261020-1",
+      title: "mo来了了了了（没告诉dadda窝偷偷来的！）",
+      sender: "OMMUJJ",
+      body: "mo来了了了了（没告诉dadda窝偷偷来的！）",
+      kind: "post",
+      time: "2026-10-20 08:30",
+    }),
+    makeItem({
+      id: "threads-post-20261020-2",
+      title: "daddy给mo买的手机，因为mo想和daddydada打电哇，dada还帮mo注册了line，说mo如果打不通电哇就可以在这上面给他们发消息，mo早就学会了！还知道threads怎么用，偷偷来这玩不告诉dadda噢🍥",
+      sender: "OMMUJJ",
+      body: "daddy给mo买的手机，因为mo想和daddydada打电哇，dada还帮mo注册了line，说mo如果打不通电哇就可以在这上面给他们发消息，mo早就学会了！还知道threads怎么用，偷偷来这玩不告诉dadda噢🍥",
+      kind: "post",
+      time: "2026-10-20 08:40",
     }),
   ];
   w.data.instagram = [

@@ -55,9 +55,14 @@ export function ThreadsReference(p: SkinProps) {
       meta: { local: "true" },
     }),
   );
+  const profile = p.items.find((i) => i.id === "threads-profile");
+  const username = profile?.meta.username || "OMMUJJ";
+  const bio = profile?.meta.bio || "mo的秘密空间";
   const feed = [
       ...local,
-      ...p.items.filter((i) => i.folder !== "私信" && !i.meta.activityType),
+      ...p.items.filter(
+        (i) => i.id !== "threads-profile" && i.folder !== "私信" && !i.meta.activityType,
+      ),
     ],
     messages = p.items.filter((i) => i.folder === "私信"),
     activities = p.items.filter((i) => i.meta.activityType);
@@ -220,7 +225,7 @@ export function ThreadsReference(p: SkinProps) {
                       : tab === "动态"
                         ? "动态"
                         : tab === "个人主页"
-                          ? p.owner || "机主"
+                          ? username
                           : tab}
                   </h1>
                   {(tab === "消息" || tab === "动态") && <BellOff />}
@@ -330,12 +335,13 @@ export function ThreadsReference(p: SkinProps) {
             {tab === "个人主页" && (
               <>
                 <div className="tr-profile">
-                  <Avatar name={p.owner || "机主"} />
-                  <p>{p.owner}</p>
+                  <Avatar name={username} />
+                  <p>{username}</p>
+                  <small>{bio}</small>
                 </div>
                 {feed
                   .filter(
-                    (i) => i.sender === p.owner || i.meta.local === "true",
+                    (i) => i.sender === username || i.meta.local === "true",
                   )
                   .map(card)}
               </>
@@ -447,9 +453,9 @@ export function ThreadsReference(p: SkinProps) {
             </button>
           </header>
           <div className="tr-compose-content">
-            <Avatar name={p.owner || "机主"} />
+            <Avatar name={username} />
             <div>
-              <b>{p.owner}</b>
+              <b>{username}</b>
               <span className="tr-muted"> › 社群或话题</span>
               <textarea
                 aria-label="串文内容"

@@ -77,13 +77,6 @@ export function ThreadsReference(p: SkinProps) {
       ...configuredPosts.map(
         (fallback) => existingPosts.find((i) => i.id === fallback.id) ?? fallback,
       ),
-      ...p.items.filter(
-        (i) =>
-          i.id !== "threads-profile" &&
-          !i.id.startsWith("threads-post-20261020-") &&
-          i.folder !== "私信" &&
-          !i.meta.activityType,
-      ),
     ],
     messages = p.items.filter((i) => i.folder === "私信"),
     activities = p.items.filter((i) => i.meta.activityType);

@@ -732,9 +732,9 @@ export function MusicSkin(p: Props) {
     (i) => meta(i, "playlist") === playlistName || i.folder === playlistName,
   );
   const playlists = [...new Set(items.map((i) => meta(i, "playlist", i.folder || "我的音乐")))];
-  const openAppleMusic = (item: Item) => {
-    const url = meta(item, "appleMusicUrl");
-    if (url) window.open(url, "_blank", "noopener,noreferrer");
+  const appleMusicEmbedUrl = (item: Item) => {
+    const id = meta(item, "appleMusicId");
+    return id ? `https://embed.music.apple.com/cn/song/${encodeURIComponent(item.title)}/${encodeURIComponent(id)}?app=music` : "";
   };
   return (
     <div className="catalog-skin native-music">
@@ -786,11 +786,6 @@ export function MusicSkin(p: Props) {
                       </span>
                       <span>{meta(i, "duration")}</span>
                     </button>
-                    {meta(i, "appleMusicUrl") && (
-                      <button className="music-apple-link" onClick={() => openAppleMusic(i)}>
-                        在 Apple Music 中打开 ↗
-                      </button>
-                    )}
                   </div>
                 ))}
               </section>
@@ -807,11 +802,6 @@ export function MusicSkin(p: Props) {
                 </span>
                 <span>{meta(i, "duration")}</span>
               </button>
-              {meta(i, "appleMusicUrl") && (
-                <button className="music-apple-link" onClick={() => openAppleMusic(i)}>
-                  在 Apple Music 中打开 ↗
-                </button>
-              )}
             </div>
           ))
         )}
@@ -825,8 +815,17 @@ export function MusicSkin(p: Props) {
           </button>
           {song.kind === "audio" && safeMedia(song.media) ? (
             <AudioPlayer p={p} item={song} />
+          ) : appleMusicEmbedUrl(song) ? (
+            <iframe
+              className="music-apple-embed"
+              src={appleMusicEmbedUrl(song)}
+              title={`播放 ${song.title}`}
+              allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write"
+              sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation-by-user-activation"
+              loading="lazy"
+            />
           ) : (
-            <button onClick={() => openAppleMusic(song)}>在 Apple Music 中打开 ↗</button>
+            <span>这首歌暂时没有可播放的音源</span>
           )}
           <button
             aria-label="下一首"

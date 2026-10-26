@@ -4181,3 +4181,6 @@
 .music-playlist-tracks h2{font-size:17px;margin:12px 4px}
 .music-track-wrap{position:relative}
 .music-track-wrap .music-apple-link{display:block;margin:-5px 0 9px 38px;padding:3px 0;border:0;background:transparent;color:var(--accent,#d65d7b);text-align:left}
+
+.music-apple-embed{display:block;width:100%;min-width:0;height:150px;border:0;border-radius:12px;background:transparent}
+.native-now-playing:has(.music-apple-embed){height:auto;min-height:150px;align-items:center;flex-wrap:wrap}

@@ -55,13 +55,51 @@ export function ThreadsReference(p: SkinProps) {
       meta: { local: "true" },
     }),
   );
-  const profile = p.items.find((i) => i.id === "threads-profile");
-  const username = profile?.meta.username || "OMMUJJ";
-  const bio = profile?.meta.bio || "mo的秘密空间";
+  // Keep the configured demo profile/posts visible even if an older saved runtime
+  // filters those records out before they reach this skin.
+  const username = "OMMUJJ";
+  const bio = "mo的秘密空间";
+  const profile = makeItem({
+    id: "threads-profile",
+    title: username,
+    body: bio,
+    sender: username,
+    kind: "post",
+    folder: "个人主页",
+    time: "2026-10-20 08:00",
+    meta: { username, bio },
+  });
+  const configuredPosts = [
+    makeItem({
+      id: "threads-post-20261020-1",
+      title: "mo来了了了了（没告诉dadda窝偷偷来的！）",
+      body: "mo来了了了了（没告诉dadda窝偷偷来的！）",
+      sender: username,
+      kind: "post",
+      time: "2026-10-20 08:30",
+    }),
+    makeItem({
+      id: "threads-post-20261020-2",
+      title: "daddy给mo买的手机，因为mo想和daddydada打电哇，dada还帮mo注册了line，说mo如果打不通电哇就可以在这上面给他们发消息，mo早就学会了！还知道threads怎么用，偷偷来这玩不告诉dadda噢🍥",
+      body: "daddy给mo买的手机，因为mo想和daddydada打电哇，dada还帮mo注册了line，说mo如果打不通电哇就可以在这上面给他们发消息，mo早就学会了！还知道threads怎么用，偷偷来这玩不告诉dadda噢🍥",
+      sender: username,
+      kind: "post",
+      time: "2026-10-20 08:40",
+    }),
+  ];
+  const existingPosts = p.items.filter(
+    (i) => i.id.startsWith("threads-post-20261020-"),
+  );
   const feed = [
       ...local,
+      profile,
+      ...(existingPosts.length ? existingPosts : configuredPosts),
       ...p.items.filter(
-        (i) => i.id !== "threads-profile" && i.folder !== "私信" && !i.meta.activityType,
+        (i) =>
+          i.id !== "threads-profile" &&
+          !i.id.startsWith("threads-post-20261020-") &&
+          i.folder !== "私信" &&
+          !i.meta.activityType,
       ),
     ],
     messages = p.items.filter((i) => i.folder === "私信"),

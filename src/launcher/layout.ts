@@ -57,7 +57,7 @@ export function defaultLayout(input: Work): DeviceLayout {
   return {
     version: 1,
     workId: w.id,
-    previewLayoutRevision: w.id === "ui-test-phone-v2" ? 2 : 0,
+    previewLayoutRevision: w.id === "ui-test-phone-v2" ? 1 : 0,
     apps: structuredClone(w.apps)
       .sort((a, b) => (a.id === "appstore" ? -1 : b.id === "appstore" ? 1 : 0))
       .map((a) =>
@@ -123,7 +123,7 @@ export function validateLayout(raw: unknown, input: Work) {
       "calendar", "mail", "clock", "files", "maps", "weather", "calculator",
       "whatsapp", "tiktok", "telegram", "discord", "snapchat", "messenger", "spotify",
     ]);
-    layout.apps = layout.apps.filter((app) => !removedPreviewApps.has(app.id));
+    for (const app of layout.apps) {\n      if (removedPreviewApps.has(app.id)) {\n        app.installed = false;\n        app.visible = false;\n        app.dock = false;\n        app.folder = "";\n        delete layout.positions[app.id];\n      }\n    }
     layout.order = layout.order.filter((id) => !removedPreviewApps.has(id));
     layout.cleared = layout.cleared.filter((id) => !removedPreviewApps.has(id));
     for (const id of removedPreviewApps) delete layout.positions[id];

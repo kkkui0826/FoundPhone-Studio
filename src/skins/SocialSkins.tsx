@@ -206,6 +206,17 @@ export function ThreadsSkin(p: Props) {
           {tab} ⌄
         </button>
       </div>
+      {tab === "个人主页" && (
+        <section className="threads-profile" aria-label="Threads个人资料">
+          <div className="threads-profile-heading">
+            <div>
+              <strong>{items[0]?.meta.username || "OMMUJJ"}</strong>
+              <p>{items[0]?.meta.bio || "mo的秘密空间"}</p>
+            </div>
+            <Avatar name={items[0]?.meta.username || "OMMUJJ"} />
+          </div>
+        </section>
+      )}
       <div className="catalog-scroll">
         {(tab === "个人主页"
           ? items

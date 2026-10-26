@@ -45,16 +45,7 @@ export function ThreadsReference(p: SkinProps) {
     [numbers, setNumbers] = useState(false),
     [options, setOptions] = useState(false),
     [selected, setSelected] = useState<Item | null>(null);
-  const local = posts.map((body, n) =>
-    makeItem({
-      id: "local-thread-" + n,
-      title: "本地串文",
-      body,
-      sender: p.owner || "机主",
-      time: p.virtualTime || "09:41",
-      meta: { local: "true" },
-    }),
-  );
+  const local: Item[] = [];
   // Keep the configured demo profile/posts visible even if an older saved runtime
   // filters those records out before they reach this skin.
   const username = "OMMUJJ";

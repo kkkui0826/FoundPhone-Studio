@@ -34,6 +34,36 @@ export const useStudio = create<Store>((set, get) => ({
       let works = (await db.works.orderBy("updatedAt").reverse().toArray()).map(
         validateWork,
       );
+      // Migrate the built-in sample only; leave user-created works untouched.
+      works = works.map((work) => {
+        if (work.title !== "雨停之前") return work;
+        const next = structuredClone(work);
+        const hiddenApps = new Set(["calendar","mail","clock","files","maps","weather","calculator","whatsapp","tiktok","telegram","discord","snapchat","messenger","spotify"]);
+        next.apps = next.apps.map((app) => hiddenApps.has(app.id) ? { ...app, visible: false } : app);
+        next.data.threads = [{
+          id: "threads-profile",
+          title: "OMMUJJ",
+          body: "mo的秘密空间",
+          richText: "",
+          meta: { username: "OMMUJJ", bio: "mo的秘密空间" },
+          time: "2026-09-01 08:30",
+          sender: "OMMUJJ",
+          avatar: "",
+          kind: "post",
+          media: "",
+          hidden: false,
+          unlock: "",
+          password: "",
+          folder: "个人主页",
+          favorite: false,
+          outgoing: false,
+          read: false,
+          likes: 0,
+          comments: [],
+        }];
+        return next;
+      });
+      for (const work of works) await db.works.put(work);
       if (!works.length) {
         const w = createWork();
         await db.works.put(w);

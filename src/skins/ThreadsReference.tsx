@@ -59,16 +59,7 @@ export function ThreadsReference(p: SkinProps) {
   // filters those records out before they reach this skin.
   const username = "OMMUJJ";
   const bio = "mo的秘密空间";
-  const profile = makeItem({
-    id: "threads-profile",
-    title: username,
-    body: bio,
-    sender: username,
-    kind: "post",
-    folder: "个人主页",
-    time: "2026-10-20 08:00",
-    meta: { username, bio },
-  });
+
   const configuredPosts = [
     makeItem({
       id: "threads-post-20261020-1",

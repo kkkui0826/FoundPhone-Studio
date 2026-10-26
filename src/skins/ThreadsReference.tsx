@@ -92,8 +92,9 @@ export function ThreadsReference(p: SkinProps) {
   );
   const feed = [
       ...local,
-      profile,
-      ...(existingPosts.length ? existingPosts : configuredPosts),
+      ...configuredPosts.map(
+        (fallback) => existingPosts.find((i) => i.id === fallback.id) ?? fallback,
+      ),
       ...p.items.filter(
         (i) =>
           i.id !== "threads-profile" &&

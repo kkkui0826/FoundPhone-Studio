@@ -3,7 +3,7 @@
   "id": "ui-test-phone-v2",
   "title": "捡手机",
   "description": "仅用于界面测试，不含剧情",
-  "revision": 6,
+  "revision": 7,
   "phone": {
     "owner": "mo✨",
     "date": "2026-10-25",
@@ -415,12 +415,68 @@
     ],
     "music": [
       {
-        "id": "test-item-music",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "id": "music-trust-me",
+        "title": "วางใจ (Trust Me)",
+        "body": "歌曲链接：Apple Music · My Romance Scammer 原声",
+        "sender": "Junior Panachai, Mark Jiruntanin",
         "kind": "text",
-        "meta": {}
+        "time": "",
+        "folder": "☀️❤️🌙",
+        "meta": {
+          "playlist": "☀️❤️🌙",
+          "album": "วางใจ (Trust Me) - Single",
+          "duration": "3:48",
+          "appleMusicId": "1876458211",
+          "appleMusicUrl": "https://music.apple.com/cn/album/%E0%B8%A7%E0%B8%B2%E0%B8%87%E0%B9%83%E0%B8%88-trust-me-%E0%B9%80%E0%B8%9E%E0%B8%A5%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9A%E0%B8%8B-%E0%B8%A3-%E0%B8%AA-my-romance-scammer-%E0%B8%A3/1876458208?i=1876458211"
+        }
+      },
+      {
+        "id": "music-let-me-love-you",
+        "title": "ให้ได้รัก (Let Me Love You)",
+        "body": "歌曲链接：Apple Music · My Romance Scammer 原声",
+        "sender": "Junior Panachai",
+        "kind": "text",
+        "time": "",
+        "folder": "☀️❤️🌙",
+        "meta": {
+          "playlist": "☀️❤️🌙",
+          "album": "ให้ได้รัก (Let Me Love You) - Single",
+          "duration": "3:00",
+          "appleMusicId": "1890120609",
+          "appleMusicUrl": "https://music.apple.com/cn/album/%E0%B9%83%E0%B8%AB-%E0%B9%84%E0%B8%94-%E0%B8%A3-%E0%B8%81-let-me-love-you-%E0%B9%80%E0%B8%9E%E0%B8%A5%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9A%E0%B8%8B-%E0%B8%A3-%E0%B8%AA-my-romance/1890120592?i=1890120609"
+        }
+      },
+      {
+        "id": "music-cutie-overload",
+        "title": "อย่าน่ารักเกิน (Cutie Overload)",
+        "body": "歌曲链接：Apple Music",
+        "sender": "Junior Panachai, Mark Jiruntanin",
+        "kind": "text",
+        "time": "",
+        "folder": "☀️❤️🌙",
+        "meta": {
+          "playlist": "☀️❤️🌙",
+          "album": "อย่าน่ารักเกิน (Cutie Overload) - Single",
+          "duration": "3:00",
+          "appleMusicId": "1830449310",
+          "appleMusicUrl": "https://music.apple.com/cn/album/%E0%B8%AD%E0%B8%A2-%E0%B8%B2%E0%B8%99-%E0%B8%B2%E0%B8%A3-%E0%B8%81%E0%B9%80%E0%B8%81-%E0%B8%99-cutie-overload/1830449309?i=1830449310"
+        }
+      },
+      {
+        "id": "music-trial-love",
+        "title": "ทดลองรัก (Trial Love)",
+        "body": "歌曲链接：Apple Music · Perfect 10 Liners 原声",
+        "sender": "Junior Panachai, Mark Jiruntanin",
+        "kind": "text",
+        "time": "",
+        "folder": "☀️❤️🌙",
+        "meta": {
+          "playlist": "☀️❤️🌙",
+          "album": "ทดลองรัก (Trial Love) - Single",
+          "duration": "3:36",
+          "appleMusicId": "1798732125",
+          "appleMusicUrl": "https://music.apple.com/cn/album/%E0%B8%97%E0%B8%94%E0%B8%A5%E0%B8%AD%E0%B8%87%E0%B8%A3-%E0%B8%81-trial-love-%E0%B9%80%E0%B8%9E%E0%B8%A5%E0%B8%87%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%AD%E0%B8%9A%E0%B8%8B-%E0%B8%A3-%E0%B8%AA-%E0%B8%AA%E0%B8%B2%E0%B8%A2%E0%B8%A3%E0%B8%AB-%E0%B8%AA%E0%B9%80%E0%B8%97%E0%B8%A7%E0%B8%94%E0%B8%B2-perfect/1798732122?i=1798732125"
+        }
       }
     ],
     "maps": [

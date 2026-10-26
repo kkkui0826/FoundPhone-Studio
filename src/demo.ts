@@ -32,7 +32,7 @@ export function createWork(title = "雨停之前"): Work {
         "safari",
         "settings",
       ].includes(a.id),
-      visible: true,
+      visible: !["calendar","mail","clock","files","maps","weather","calculator","whatsapp","tiktok","telegram","discord","snapchat","messenger","spotify"].includes(a.id),
       dock: ["phone", "messages", "safari", "music"].includes(a.id),
       folder:
         ![
@@ -140,6 +140,16 @@ export function createWork(title = "雨停之前"): Work {
       title: "窗外的雨",
       body: "2026 年 9 月 1 日 · 城南",
       kind: "image",
+    }),
+  ];
+  w.data.threads = [
+    makeItem({
+      id: "threads-profile",
+      title: "OMMUJJ",
+      sender: "OMMUJJ",
+      body: "mo的秘密空间",
+      meta: { username: "OMMUJJ", bio: "mo的秘密空间" },
+      kind: "post",
     }),
   ];
   w.data.instagram = [

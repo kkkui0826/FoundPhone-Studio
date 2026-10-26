@@ -109,7 +109,7 @@ it("migrates preview folders once while preserving custom folders and widgets", 
   const migrated = validateLayout(old, w);
   for (const id of ["wechat", "douyin", "instagram"])
     expect(migrated.apps.find((a) => a.id === id)!.folder).toBe("");
-  expect(migrated.apps.find((a) => a.id === "clock")!.folder).toBe("我的工具");
+  expect(migrated.apps.find((a) => a.id === "clock")).toMatchObject({\n    installed: false,\n    visible: false,\n    dock: false,\n    folder: "",\n  });
   expect(migrated.widgets).toEqual(old.widgets);
   expect(JSON.stringify(w)).toBe(before);
   migrated.apps.find((a) => a.id === "wechat")!.folder = "作者新建文件夹";

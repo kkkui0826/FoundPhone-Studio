@@ -4171,3 +4171,13 @@
 .grab-food strong { font-size:11px; }
 .grab-food p { font-size:9px; white-space:pre-line; color:#66716a; }
 .grab-food small { color:#9aa39c; font-size:9px; }
+
+
+.music-playlist-featured{display:flex;align-items:center;gap:14px;width:100%;padding:14px;margin:10px 0 18px;border:0;border-radius:18px;background:linear-gradient(135deg,#fff0b8,#ffd6e4 55%,#dce9ff);color:#292631;text-align:left}
+.music-playlist-art{display:grid;place-items:center;width:68px;height:68px;flex:none;border-radius:12px;background:rgba(255,255,255,.65);font-size:22px}
+.music-playlist-featured>span:nth-child(2){display:flex;flex:1;flex-direction:column;gap:5px}
+.music-playlist-featured small,.music-track-wrap .music-apple-link{font-size:11px;opacity:.75}
+.music-playlist-tracks{margin:12px 0 20px}
+.music-playlist-tracks h2{font-size:17px;margin:12px 4px}
+.music-track-wrap{position:relative}
+.music-track-wrap .music-apple-link{display:block;margin:-5px 0 9px 38px;padding:3px 0;border:0;background:transparent;color:var(--accent,#d65d7b);text-align:left}

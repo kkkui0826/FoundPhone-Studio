@@ -123,7 +123,15 @@ export function validateLayout(raw: unknown, input: Work) {
       "calendar", "mail", "clock", "files", "maps", "weather", "calculator",
       "whatsapp", "tiktok", "telegram", "discord", "snapchat", "messenger", "spotify",
     ]);
-    for (const app of layout.apps) {\n      if (removedPreviewApps.has(app.id)) {\n        app.installed = false;\n        app.visible = false;\n        app.dock = false;\n        app.folder = "";\n        delete layout.positions[app.id];\n      }\n    }
+    for (const app of layout.apps) {
+      if (removedPreviewApps.has(app.id)) {
+        app.installed = false;
+        app.visible = false;
+        app.dock = false;
+        app.folder = "";
+        delete layout.positions[app.id];
+      }
+    }
     layout.order = layout.order.filter((id) => !removedPreviewApps.has(id));
     layout.cleared = layout.cleared.filter((id) => !removedPreviewApps.has(id));
     for (const id of removedPreviewApps) delete layout.positions[id];

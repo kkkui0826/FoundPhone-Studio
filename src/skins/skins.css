@@ -4215,3 +4215,29 @@
   grid-column:2;
   grid-row:1;
 }
+
+/* Force the music dock to stay compact even when global iframe styles apply. */
+.native-music .native-now-playing:has(iframe.music-apple-embed){
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) auto !important;
+  gap:4px 8px !important;
+  height:104px !important;
+  min-height:104px !important;
+  max-height:104px !important;
+  overflow:hidden !important;
+  box-sizing:border-box !important;
+  padding:6px 10px !important;
+  flex-wrap:nowrap !important;
+}
+.native-music .native-now-playing iframe.music-apple-embed{
+  display:block !important;
+  grid-column:1 / -1 !important;
+  width:100% !important;
+  height:64px !important;
+  min-height:64px !important;
+  max-height:64px !important;
+  margin:0 !important;
+  padding:0 !important;
+  border:0 !important;
+  overflow:hidden !important;
+}

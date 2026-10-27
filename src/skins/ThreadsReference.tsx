@@ -93,7 +93,7 @@ export function ThreadsReference(p: SkinProps) {
   const card = (i: Item) => (
     <article className="tr-post" key={i.id}>
       <button className="tr-avatar" onClick={() => setTab("个人主页")}>
-        <Avatar name={i.sender} src={i.avatar} />
+        <Avatar name={i.sender} src={i.avatar || "/avatars/ommujj.jpg"} />
         <span>+</span>
       </button>
       <div className="tr-post-content">
@@ -306,7 +306,7 @@ export function ThreadsReference(p: SkinProps) {
                     key={i.id}
                     onClick={() => open(i)}
                   >
-                    <Avatar name={i.sender} src={i.avatar} />
+                    <Avatar name={i.sender} src={i.avatar || "/avatars/ommujj.jpg"} />
                     <span>
                       <b>{i.sender}</b>
                       <small>
@@ -331,7 +331,7 @@ export function ThreadsReference(p: SkinProps) {
                   )
                   .map((i) => (
                     <div className="tr-activity" key={i.id}>
-                      <Avatar name={i.sender} src={i.avatar} />
+                      <Avatar name={i.sender} src={i.avatar || "/avatars/ommujj.jpg"} />
                       <div>
                         <b>{i.sender}</b>
                         <small>{i.time.slice(-5)}</small>
@@ -349,7 +349,7 @@ export function ThreadsReference(p: SkinProps) {
             {tab === "个人主页" && (
               <>
                 <div className="tr-profile">
-                  <Avatar name={username} />
+                  <Avatar name={username} src="/avatars/ommujj.jpg" />
                   <p>{username}</p>
                   <small>{bio}</small>
                 </div>

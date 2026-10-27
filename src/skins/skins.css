@@ -4132,6 +4132,89 @@
 }
 
 
+.line-interactive .line-sender-name {
+  display: block;
+  margin: 0 0 4px 8px;
+  color: #68756d;
+  font-size: 10px;
+  line-height: 1.3;
+}
+.line-interactive .catalog-message {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 7px 0 10px;
+}
+.line-interactive .catalog-message.outgoing {
+  align-items: flex-end;
+}
+.line-interactive .catalog-message > button {
+  position: relative;
+  display: block;
+  border-radius: 4px 14px 14px 14px;
+  padding: 9px 11px 7px;
+  background: #f0f2f0;
+  color: #1c241f;
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+.line-interactive .catalog-message.outgoing > button {
+  border-radius: 14px 4px 14px 14px;
+  background: #06c755;
+  color: #102416;
+}
+.line-interactive .line-voice-transcript {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  width: 38px;
+  height: 18px;
+  margin: 0 0 5px;
+  color: #16883f;
+}
+.line-interactive .line-voice-transcript svg {
+  width: 15px;
+  height: 15px;
+  stroke-width: 2.2;
+}
+.line-interactive .line-voice-transcript::after {
+  content: "";
+  display: block;
+  width: 21px;
+  height: 12px;
+  background: repeating-linear-gradient(90deg, #16883f 0 2px, transparent 2px 4px);
+  clip-path: polygon(0 42%, 8% 42%, 8% 20%, 16% 20%, 16% 65%, 24% 65%, 24% 0, 32% 0, 32% 80%, 40% 80%, 40% 28%, 48% 28%, 48% 60%, 56% 60%, 56% 10%, 64% 10%, 64% 75%, 72% 75%, 72% 35%, 80% 35%, 80% 55%, 88% 55%, 88% 25%, 96% 25%, 96% 42%, 100% 42%, 100% 58%, 0 58%);
+}
+.line-interactive .catalog-message small {
+  display: block;
+  margin-top: 5px;
+  color: #7c8980;
+  font-size: 8px;
+  text-align: right;
+}
+.line-interactive .catalog-message.outgoing small {
+  color: #34714a;
+}
+.dark-phone .line-interactive .line-sender-name {
+  color: #b4c2b8;
+}
+.dark-phone .line-interactive .catalog-message > button {
+  background: #303a33;
+  color: #eee;
+}
+.dark-phone .line-interactive .catalog-message.outgoing > button {
+  background: #126b37;
+  color: #f4fff6;
+}
+.dark-phone .line-interactive .line-voice-transcript {
+  color: #8be0a7;
+}
+.dark-phone .line-interactive .line-voice-transcript::after {
+  background: repeating-linear-gradient(90deg, #8be0a7 0 2px, transparent 2px 4px);
+}
+
 /* Interactive LINE and Grab demo skins */
 .line-interactive { --app-accent: #06c755; }
 .line-interactive .line-peer-bar { display:flex; align-items:center; gap:9px; padding:8px 12px; border-bottom:1px solid #e8e8e8; background:#fff; }

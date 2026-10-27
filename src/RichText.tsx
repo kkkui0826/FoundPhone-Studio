@@ -79,8 +79,32 @@ export function RichText({
       ?.slice(0, 10000)
       .map((c, i) => render(c, depth + 1, i));
     switch (n.type) {
-      case "paragraph":
+      case "paragraph": {
+        const first = n.content?.[0];
+        const checklist = first?.type === "text"
+          ? /^(?:- )?\\[([ xX])\\]\\s*/.exec(first.text ?? "")
+          : null;
+        if (checklist && n.content) {
+          const rest = n.content.map((node, index) =>
+            index === 0
+              ? { ...node, text: (node.text ?? "").slice(checklist[0].length) }
+              : node,
+          );
+          return (
+            <p key={key} className="rich-checklist-item">
+              <span
+                className={`rich-check-circle ${checklist[1].trim() ? "checked" : ""}`}
+                aria-label={checklist[1].trim() ? "已完成" : "未完成"}
+                role="img"
+              >
+                {checklist[1].trim() ? "✓" : ""}
+              </span>
+              {rest.map((child, i) => render(child, depth + 1, i))}
+            </p>
+          );
+        }
         return <p key={key}>{children}</p>;
+      }
       case "heading":
         return <h3 key={key}>{children}</h3>;
       case "bulletList":

@@ -4943,3 +4943,9 @@ label {
 .wallpaper-family-custom .lock-screen {
   background: transparent;
 }
+
+
+/* Native-style circular checklist markers in memo rich text. */
+.rich-checklist-item { display: flex; align-items: flex-start; gap: 9px; }
+.rich-check-circle { box-sizing: border-box; display: inline-flex; flex: 0 0 18px; width: 18px; height: 18px; margin-top: 3px; border: 1.7px solid #a6a6a6; border-radius: 50%; align-items: center; justify-content: center; font-size: 12px; line-height: 1; color: #fff; }
+.rich-check-circle.checked { border-color: #3478f6; background: #3478f6; }

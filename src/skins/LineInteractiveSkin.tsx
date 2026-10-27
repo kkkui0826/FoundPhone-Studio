@@ -12,7 +12,8 @@ export function LineInteractiveSkin(p: Props) {
   const [liked, setLiked] = useSkinState<string[]>(p, "line-liked-messages", []);
   const local = sent.flatMap(raw => { try { return [JSON.parse(raw) as Item]; } catch { return []; } });
   const all = [...p.items, ...local].filter(i => (i.title+i.body+i.sender).toLowerCase().includes(search.toLowerCase()));
-  const threads = [...new Set(all.map(i => i.title))];
+  const pinnedThreads = ["daddy juju", "dada🐱", "一家三口dada最帅（3）"];
+  const threads = [...new Set([...pinnedThreads, ...all.map(i => i.title)])].filter(name => name.toLowerCase().includes(search.toLowerCase()));
   const current = all.filter(i => i.title === p.thread);
   const send = () => {
     const body = draft.trim();
@@ -53,9 +54,9 @@ export function LineInteractiveSkin(p: Props) {
         <SearchBox value={search} set={setSearch} placeholder="搜索好友或聊天"/>
         {activeTab==="聊天" ? threads.map(name=>{
           const threadItems=all.filter(i=>i.title===name);
-          const last=threadItems.at(-1)!;
+          const last=threadItems.at(-1);
           return <button className="catalog-chat" key={name} onClick={()=>{p.onThread(name);p.onRead(name);}}>
-            <Avatar name={name}/><span><strong>{name}</strong><p>{last.body}</p></span><time>{last.time.slice(-5)}</time>
+            <Avatar name={name}/><span><strong>{name}</strong><p>{last?.body || "还没有消息"}</p></span><time>{last?.time ? last.time.slice(-5) : ""}</time>
           </button>;
         }) : [...new Set(all.map(i=>i.sender).filter(name=>name && name!==(p.owner||"mo✨")))].map(name=>{
           const first=all.find(i=>i.sender===name)!;

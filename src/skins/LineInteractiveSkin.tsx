@@ -12,7 +12,7 @@ export function LineInteractiveSkin(p: Props) {
   const [liked, setLiked] = useSkinState<string[]>(p, "line-liked-messages", []);
   const local = sent.flatMap(raw => { try { return [JSON.parse(raw) as Item]; } catch { return []; } });
   const all = [...p.items, ...local].filter(i => (i.title+i.body+i.sender).toLowerCase().includes(search.toLowerCase()));
-  const pinnedThreads = ["daddy juju", "dada🐱", "一家三口dada最truy（3）"];
+  const pinnedThreads = ["一家三口dada最truy（3）", "daddy juju", "dada🐱"];
   const threads = [...new Set([...pinnedThreads, ...all.map(i => i.title)])].filter(name => name.toLowerCase().includes(search.toLowerCase()));
   const current = all.filter(i => i.title === p.thread);
   const send = () => {

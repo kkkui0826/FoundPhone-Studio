@@ -51,27 +51,107 @@ export function ThreadsReference(p: SkinProps) {
   const username = "OMMUJJ";
   const bio = "mo的秘密空间";
 
+  // Seed the supplied OMMUJJ timeline in reverse chronological order:
+  // newest posts appear first, while timestamps preserve the story's sequence.
   const configuredPosts = [
     makeItem({
-      id: "threads-post-20261020-1",
-      title: "mo来了了了了（没告诉dadda窝偷偷来的！）",
-      body: "mo来了了了了（没告诉dadda窝偷偷来的！）",
+      id: "threads-post-20261023-6",
+      title: "晚安✨",
+      body: "晚安✨",
       sender: username,
       kind: "post",
-      time: "2026-10-20 08:30",
+      time: "2026-10-23 23:31",
     }),
     makeItem({
-      id: "threads-post-20261020-2",
+      id: "threads-post-20261023-5",
+      title: "差一点被dada发现mo在偷偷玩手机没有碎觉了😪好吧！mo要去找dada一起碎觉～",
+      body: "差一点被dada发现mo在偷偷玩手机没有碎觉了😪好吧！mo要去找dada一起碎觉～",
+      sender: username,
+      kind: "post",
+      time: "2026-10-23 23:30",
+    }),
+    makeItem({
+      id: "threads-post-20261023-4",
+      title: "我特别特别爱我的daddy和dada💙💛",
+      body: "我特别特别爱我的daddy和dada💙💛",
+      sender: username,
+      kind: "post",
+      time: "2026-10-23 23:15",
+    }),
+    makeItem({
+      id: "threads-post-20261023-3",
+      title: "其实mo刚刚还想嗦🥺mo爱daddy和dada❤️",
+      body: "其实mo刚刚还想嗦🥺mo爱daddy和dada❤️",
+      sender: username,
+      kind: "post",
+      time: "2026-10-23 23:00",
+    }),
+    makeItem({
+      id: "threads-post-20261023-2",
+      title: "嘿嘿daddy和dada被mo吓了一跳！mo很泥害吧！但是mo太紧脏了感觉有一点点没发挥好🥺dada嗦没关系，mo是全天下最棒的小孩，是我们家最尼害的人，可数为什么dada和daddy一直在笑呀？还让mo嗦安德莱🤟好吧！全家最尼害的人会满足Juju和P‘Jirun的愿望的🥰",
+      body: "嘿嘿daddy和dada被mo吓了一跳！mo很泥害吧！但是mo太紧脏了感觉有一点点没发挥好🥺dada嗦没关系，mo是全天下最棒的小孩，是我们家最尼害的人，可数为什么dada和daddy一直在笑呀？还让mo嗦安德莱🤟好吧！全家最尼害的人会满足Juju和P‘Jirun的愿望的🥰",
+      sender: username,
+      kind: "post",
+      time: "2026-10-23 22:50",
+    }),
+    makeItem({
+      id: "threads-post-20261023-1",
+      title: "啊啊啊啊好紧脏！！",
+      body: "啊啊啊啊好紧脏！！",
+      sender: username,
+      kind: "post",
+      time: "2026-10-23 22:40",
+    }),
+    makeItem({
+      id: "threads-post-20261012-1",
+      title: "上幼儿园的时候大家嗦mo的声音很可爱！mo很开心！mo要更噜力，一定能学会生日歌的，mo要唱给daddy听🥰",
+      body: "上幼儿园的时候大家嗦mo的声音很可爱！mo很开心！mo要更噜力，一定能学会生日歌的，mo要唱给daddy听🥰",
+      sender: username,
+      kind: "post",
+      time: "2026-10-12 18:00",
+    }),
+    makeItem({
+      id: "threads-post-20261010-2",
+      title: "其实mo知道daddy和dada很想听到mo的声音，mo练习了好久，daddy和dada会喜欢mo的声音嘛🥺",
+      body: "其实mo知道daddy和dada很想听到mo的声音，mo练习了好久，daddy和dada会喜欢mo的声音嘛🥺",
+      sender: username,
+      kind: "post",
+      time: "2026-10-10 20:00",
+    }),
+    makeItem({
+      id: "threads-post-20261010-1",
+      title: "哇啊啊啊啊mo这次写得一个字都米有错！mo好棒😎🤟",
+      body: "哇啊啊啊啊mo这次写得一个字都米有错！mo好棒😎🤟",
+      sender: username,
+      kind: "post",
+      time: "2026-10-10 19:00",
+    }),
+    makeItem({
+      id: "threads-post-20261003-1",
+      title: "mo想给daddydada写信，写错了好多张纸，P'cream说mo可以用那些纸折成纸飞机送给大家，现在大家都收到mo的礼物了！",
+      body: "mo想给daddydada写信，写错了好多张纸，P'cream说mo可以用那些纸折成纸飞机送给大家，现在大家都收到mo的礼物了！",
+      sender: username,
+      kind: "post",
+      time: "2026-10-03 18:00",
+    }),
+    makeItem({
+      id: "threads-post-20260930-2",
       title: "daddy给mo买的手机，因为mo想和daddydada打电哇，dada还帮mo注册了line，说mo如果打不通电哇就可以在这上面给他们发消息，mo早就学会了！还知道threads怎么用，偷偷来这玩不告诉dadda噢🍥",
       body: "daddy给mo买的手机，因为mo想和daddydada打电哇，dada还帮mo注册了line，说mo如果打不通电哇就可以在这上面给他们发消息，mo早就学会了！还知道threads怎么用，偷偷来这玩不告诉dadda噢🍥",
       sender: username,
       kind: "post",
-      time: "2026-10-20 08:40",
+      time: "2026-09-30 18:10",
+    }),
+    makeItem({
+      id: "threads-post-20260930-1",
+      title: "mo来了了了了（没告诉dadda窝偷偷来的！）",
+      body: "mo来了了了了（没告诉dadda窝偷偷来的！）",
+      sender: username,
+      kind: "post",
+      time: "2026-09-30 18:00",
     }),
   ];
-  const existingPosts = p.items.filter(
-    (i) => i.id.startsWith("threads-post-20261020-"),
-  );
+  const existingPosts = p.items.filter((i) => i.id.startsWith("threads-post-"));
   const feed = [
       ...local,
       ...configuredPosts.map(

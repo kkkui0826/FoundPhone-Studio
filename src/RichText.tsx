@@ -82,7 +82,7 @@ export function RichText({
       case "paragraph": {
         const first = n.content?.[0];
         const checklist = first?.type === "text"
-          ? /^(?:- )?\\[([ xX])\\]\\s*/.exec(first.text ?? "")
+          ? /^(?:- )?\[([ xX])\]\s*/.exec(first.text ?? "")
           : null;
         if (checklist && n.content) {
           const rest = n.content.map((node, index) =>

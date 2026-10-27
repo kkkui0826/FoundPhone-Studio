@@ -117,32 +117,7 @@
         "owner",
         "daddy-juju"
       ],
-      "messages": [
-        {
-          "id": "line-daddy-001",
-          "title": "",
-          "body": "到家了吗？今天辛苦啦。",
-          "senderId": "daddy-juju",
-          "time": "20:31",
-          "kind": "text"
-        },
-        {
-          "id": "line-daddy-002",
-          "title": "",
-          "body": "到家啦～你呢？",
-          "senderId": "owner",
-          "time": "20:32",
-          "kind": "text"
-        },
-        {
-          "id": "line-daddy-003",
-          "title": "",
-          "body": "我也快到了，记得先吃点东西。",
-          "senderId": "daddy-juju",
-          "time": "20:33",
-          "kind": "text"
-        }
-      ]
+      "messages": []
     },
     {
       "id": "line-dada-cat",
@@ -152,32 +127,7 @@
         "owner",
         "dada-cat"
       ],
-      "messages": [
-        {
-          "id": "line-dada-001",
-          "title": "",
-          "body": "mo✨！你在干嘛呀 🐱",
-          "senderId": "dada-cat",
-          "time": "20:35",
-          "kind": "text"
-        },
-        {
-          "id": "line-dada-002",
-          "title": "",
-          "body": "刚忙完，来找你聊天啦～",
-          "senderId": "owner",
-          "time": "20:36",
-          "kind": "text"
-        },
-        {
-          "id": "line-dada-003",
-          "title": "",
-          "body": "那我今天可以申请一个抱抱吗？",
-          "senderId": "dada-cat",
-          "time": "20:36",
-          "kind": "text"
-        }
-      ]
+      "messages": []
     },
     {
       "id": "line-family-group",
@@ -188,40 +138,7 @@
         "daddy-juju",
         "dada-cat"
       ],
-      "messages": [
-        {
-          "id": "line-family-001",
-          "title": "",
-          "body": "一家三口集合！今天晚饭吃什么？",
-          "senderId": "daddy-juju",
-          "time": "20:40",
-          "kind": "text"
-        },
-        {
-          "id": "line-family-002",
-          "title": "",
-          "body": "我想吃火锅！🐱",
-          "senderId": "dada-cat",
-          "time": "20:40",
-          "kind": "text"
-        },
-        {
-          "id": "line-family-003",
-          "title": "",
-          "body": "都可以呀～那就火锅！",
-          "senderId": "owner",
-          "time": "20:41",
-          "kind": "text"
-        },
-        {
-          "id": "line-family-004",
-          "title": "",
-          "body": "好，那我来安排。",
-          "senderId": "daddy-juju",
-          "time": "20:42",
-          "kind": "text"
-        }
-      ]
+      "messages": []
     }
   ],
   "content": {

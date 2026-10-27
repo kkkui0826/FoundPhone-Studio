@@ -57,10 +57,15 @@ function Avatar({
   round?: boolean;
   src?: string;
 }) {
+  const avatarSrc = safeMedia(src) || (
+    name === "daddy juju" ? "/avatars/daddy-juju.jpg" :
+    name === "dada🐱" ? "/avatars/dada-cat.jpg" :
+    ["OMMUJJ", "我", "mo"].includes(name) ? "/avatars/ommujj.jpg" : ""
+  );
   return (
     <span className={`skin-avatar ${round ? "round" : ""}`}>
-      {safeMedia(src)?.startsWith("data:image/") ? (
-        <img src={safeMedia(src)} alt="" />
+      {avatarSrc && (avatarSrc.startsWith("data:image/") || avatarSrc.startsWith("/avatars/")) ? (
+        <img src={avatarSrc} alt="" />
       ) : (
         name.slice(0, 1)
       )}

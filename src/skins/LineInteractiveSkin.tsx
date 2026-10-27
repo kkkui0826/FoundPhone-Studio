@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ArrowLeft, CheckCheck, CirclePlus, Heart, MessageCircle, Send, Users } from "lucide-react";
+import { ArrowLeft, CheckCheck, CirclePlus, Heart, MessageCircle, Mic, Send, Users } from "lucide-react";
 import { useSkinState } from "../skinState";
 import type { Item } from "../schema";
 import { Avatar, Empty, Header, SearchBox, Tabs, type Props } from "./shared";
@@ -37,7 +37,9 @@ export function LineInteractiveSkin(p: Props) {
       <div className="catalog-bubbles line-bubbles">
         <div className="bubble-date">今天</div>
         {current.map((i)=><div key={i.id} className={i.outgoing || i.sender === (p.owner || "mo✨") ? "catalog-message outgoing" : "catalog-message"}>
+          {!(i.outgoing || i.sender === (p.owner || "mo✨")) && <div className="line-sender-name">{i.sender}</div>}
           <button onClick={()=>setLiked(liked.includes(i.id)?liked.filter(id=>id!==i.id):[...liked,i.id])}>
+            {i.meta?.messageType === "voice" && <span className="line-voice-transcript"><Mic size={15}/></span>}
             {i.body}<small>{i.time || "刚刚"} {i.outgoing && <CheckCheck size={10}/>}</small>
             {liked.includes(i.id) && <span className="line-reaction"><Heart size={12} fill="currentColor"/> 已喜欢</span>}
           </button>

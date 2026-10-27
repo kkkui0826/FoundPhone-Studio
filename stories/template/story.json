@@ -557,7 +557,7 @@
       {
         "id": "line-family-20260930-02",
         "title": "一家三口dada最truy（3）",
-        "body": "语音转文字：小鬼头这么迅速",
+        "body": "小鬼头这么迅速",
         "sender": "daddy juju",
         "kind": "text",
         "time": "2026-09-30 19:43",
@@ -565,7 +565,7 @@
         "media": "",
         "richText": "",
         "meta": {
-          "messageType": "voice-transcription",
+          "messageType": "voice",
           "group": "line-family-group"
         },
         "hidden": false,
@@ -581,7 +581,7 @@
       {
         "id": "line-family-20260930-03",
         "title": "一家三口dada最truy（3）",
-        "body": "语音转文字：mo想的名字吗？学到daddy的精髓了真棒",
+        "body": "mo想的名字吗？学到daddy的精髓了真棒",
         "sender": "daddy juju",
         "kind": "text",
         "time": "2026-09-30 19:44",
@@ -589,7 +589,7 @@
         "media": "",
         "richText": "",
         "meta": {
-          "messageType": "voice-transcription",
+          "messageType": "voice",
           "group": "line-family-group"
         },
         "hidden": false,
@@ -651,7 +651,7 @@
       {
         "id": "line-family-20260930-06",
         "title": "一家三口dada最truy（3）",
-        "body": "语音转文字：mo，是suay，不是truy，宝贝记错了一点哦，但是学的很快很棒诶",
+        "body": "mo，是suay，不是truy，宝贝记错了一点哦，但是学的很快很棒诶",
         "sender": "dada🐱",
         "kind": "text",
         "time": "2026-09-30 19:47",
@@ -659,7 +659,7 @@
         "media": "",
         "richText": "",
         "meta": {
-          "messageType": "voice-transcription",
+          "messageType": "voice",
           "group": "line-family-group"
         },
         "hidden": false,
@@ -744,7 +744,7 @@
       {
         "id": "line-family-20260930-10",
         "title": "一家三口dada最truy（3）",
-        "body": "语音转文字：mo，所以谁的爸爸最漂亮呀？",
+        "body": "mo，所以谁的爸爸最漂亮呀？",
         "sender": "daddy juju",
         "kind": "text",
         "time": "2026-09-30 19:52",
@@ -752,7 +752,7 @@
         "media": "",
         "richText": "",
         "meta": {
-          "messageType": "voice-transcription",
+          "messageType": "voice",
           "group": "line-family-group"
         },
         "hidden": false,
@@ -837,7 +837,7 @@
       {
         "id": "line-family-20260930-14",
         "title": "一家三口dada最truy（3）",
-        "body": "语音转文字：宝贝这次用对了词，表扬mo，学习能力很强呀",
+        "body": "宝贝这次用对了词，表扬mo，学习能力很强呀",
         "sender": "dada🐱",
         "kind": "text",
         "time": "2026-09-30 19:57",
@@ -845,7 +845,7 @@
         "media": "",
         "richText": "",
         "meta": {
-          "messageType": "voice-transcription",
+          "messageType": "voice",
           "group": "line-family-group"
         },
         "hidden": false,
@@ -861,7 +861,7 @@
       {
         "id": "line-family-20260930-15",
         "title": "一家三口dada最truy（3）",
-        "body": "语音转文字：mo今晚来找dada一起睡觉好不好呀？Dada给mo讲之前mo想听的故事",
+        "body": "mo今晚来找dada一起睡觉好不好呀？Dada给mo讲之前mo想听的故事",
         "sender": "dada🐱",
         "kind": "text",
         "time": "2026-09-30 19:59",
@@ -869,7 +869,7 @@
         "media": "",
         "richText": "",
         "meta": {
-          "messageType": "voice-transcription",
+          "messageType": "voice",
           "group": "line-family-group"
         },
         "hidden": false,
@@ -931,7 +931,7 @@
       {
         "id": "line-family-20260930-18",
         "title": "一家三口dada最truy（3）",
-        "body": "Khun lor我错了我再也不乱叫mo了我也想听故事🥺",
+        "body": "Khun lor我错了我再也不乱教mo了我也想听故事🥺",
         "sender": "Daddy Juju",
         "kind": "text",
         "time": "2026-09-30 20:03",

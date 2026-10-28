@@ -146,6 +146,13 @@ function PhoneRuntime({
   const noticesSeen = useRef(0);
   const [contextApp, setContextApp] = useState("");
   const [deviceScale, setDeviceScale] = useState(0.84);
+  const [realClock, setRealClock] = useState(() => new Date());
+  useEffect(() => {
+    const tick = () => setRealClock(new Date());
+    tick();
+    const timer = setInterval(tick, 1000);
+    return () => clearInterval(timer);
+  }, []);
   const shell = useRef<HTMLDivElement>(null);
   const gesture = useRef({ x: 0, y: 0, time: 0, zone: "" });
   const [launchOrigin, setLaunchOrigin] = useState(screenOrigin);
@@ -305,7 +312,12 @@ function PhoneRuntime({
   useEffect(() => {
     if (app && !work.apps.some((a) => a.id === app && a.installed)) setApp("");
   }, [app, work.apps]);
-  const displayTime = creator ? work.phone.time : s.time || work.phone.time;
+  const displayTime = creator
+    ? work.phone.time
+    : realClock.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: false });
+  const displayDate = creator
+    ? work.phone.date
+    : realClock.toLocaleDateString("sv-SE");
   const plugin = getApp(app);
   useEffect(() => {
     const count = s.notifications.length;
@@ -431,11 +443,7 @@ function PhoneRuntime({
           <AnimatePresence mode="wait">
             {locked && !(quickCamera && app === "camera") ? (
               <DeviceLock
-                work={
-                  s.date
-                    ? { ...work, phone: { ...work.phone, date: s.date } }
-                    : work
-                }
+                work={{ ...work, phone: { ...work.phone, date: displayDate } }}
                 time={displayTime}
                 notices={s.notifications}
                 onDismiss={dismissNotice}

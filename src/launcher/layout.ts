@@ -157,6 +157,23 @@ export function validateLayout(raw: unknown, input: Work) {
     for (const id of removedApps) delete layout.positions[id];
     layout.previewLayoutRevision = 3;
   }
+  if (w.id === "ui-test-phone-v2" && layout.previewLayoutRevision < 4) {
+    // Remove the additional apps requested for this preview from existing saved layouts.
+    const removedApps = new Set(["health","find","bilibili","netease","facebook","netflix","pinterest","kakao"]);
+    for (const app of layout.apps) {
+      if (removedApps.has(app.id)) {
+        app.installed = false;
+        app.visible = false;
+        app.dock = false;
+        app.folder = "";
+        delete layout.positions[app.id];
+      }
+    }
+    layout.order = layout.order.filter((id) => !removedApps.has(id));
+    layout.cleared = layout.cleared.filter((id) => !removedApps.has(id));
+    for (const id of removedApps) delete layout.positions[id];
+    layout.previewLayoutRevision = 4;
+  }
   const entries = homeEntries(layout),
     packed = packHome(entries, layout.positions);
   for (const entry of entries) {

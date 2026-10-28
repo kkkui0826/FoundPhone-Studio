@@ -158,7 +158,7 @@ export function LineInteractiveSkin(p: Props) {
       {isDadaThread && storyStage === 7 && (
         <div className="line-story-finished">对话已更新</div>
       )}
-      <form className="catalog-composer line-live-composer" onSubmit={e=>{e.preventDefault();isDadaThread && storyStage===0 ? send() : sendFreeMessage();}}>
+      <form className="catalog-composer line-live-composer" onSubmit={e=>{e.preventDefault();if (isDadaThread && storyStage===0) { send(); } else { sendFreeMessage(); }}}>
         <input
           aria-label="输入 LINE 消息"
           value={draft}

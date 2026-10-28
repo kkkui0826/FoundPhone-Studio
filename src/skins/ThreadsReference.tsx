@@ -50,6 +50,15 @@ export function ThreadsReference(p: SkinProps) {
   // filters those records out before they reach this skin.
   const username = "OMMUJJ";
   const bio = "mo的秘密空间";
+  // Resolve the configured profile image explicitly at every Threads avatar
+  // surface; Avatar's initials fallback is not appropriate for this demo profile.
+  const avatarFor = (name: string) => {
+    const normalized = name.trim().toLowerCase();
+    if (normalized === "ommujj" || normalized === "mo✨" || normalized === "mo") return "/avatars/ommujj.jpg";
+    if (normalized.includes("daddy") || normalized.includes("juju")) return "/avatars/daddy-juju.jpg";
+    if (normalized.includes("dada") || normalized.includes("jirun")) return "/avatars/dada-cat.jpg";
+    return "/avatars/ommujj.jpg";
+  };
 
   // Seed the supplied OMMUJJ timeline in reverse chronological order:
   // newest posts appear first, while timestamps preserve the story's sequence.
@@ -173,7 +182,7 @@ export function ThreadsReference(p: SkinProps) {
   const card = (i: Item) => (
     <article className="tr-post" key={i.id}>
       <button className="tr-avatar" onClick={() => setTab("个人主页")}>
-        <Avatar name={i.sender} src={i.avatar || "/avatars/ommujj.jpg"} />
+        <Avatar name={i.sender} src={i.avatar || avatarFor(i.sender)} />
         <span>+</span>
       </button>
       <div className="tr-post-content">
@@ -547,7 +556,7 @@ export function ThreadsReference(p: SkinProps) {
             </button>
           </header>
           <div className="tr-compose-content">
-            <Avatar name={username} />
+            <Avatar name={username} src="/avatars/ommujj.jpg" />
             <div>
               <b>{username}</b>
               <span className="tr-muted"> › 社群或话题</span>

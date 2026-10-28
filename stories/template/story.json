@@ -3,11 +3,11 @@
   "id": "ui-test-phone-v2",
   "title": "捡手机",
   "description": "仅用于界面测试，不含剧情",
-  "revision": 13,
+  "revision": 14,
   "phone": {
     "owner": "mo✨",
-    "date": "2026-09-30",
-    "time": "19:40",
+    "date": "2026-10-28",
+    "time": "14:23",
     "battery": 94,
     "network": "5G",
     "wallpaper": "family-custom",
@@ -2826,7 +2826,9 @@
       }
     ]
   },
-  "variables": {},
+  "variables": {
+    "lineDadaUnlockNotice": true
+  },
   "events": [],
   "tests": []
 }

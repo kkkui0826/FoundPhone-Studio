@@ -306,7 +306,6 @@ export function SafariSkin(p: Props) {
   const [q, setQ] = useState(""),
     [tab, setTab] = useState("书签"),
     [searchFocused, setSearchFocused] = useState(false);
-  const history = p.items.filter((i) => i.folder === "历史记录");
   const searchRecords = p.items.filter((i) => i.folder === "搜索记录");
   const items = p.items
     .filter((i) =>

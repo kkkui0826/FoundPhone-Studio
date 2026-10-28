@@ -289,6 +289,13 @@ function PhoneRuntime({
         setPendingNotification("");
         setPanel("");
         open("line");
+      } else {
+        // Surface Dada's LINE message as a banner after a normal passcode unlock.
+        const notice = "LINE|dada🐱:有一条新消息";
+        const current = runtimeRef.current;
+        if (!current.notifications.includes(notice)) {
+          update({ ...current, notifications: [...current.notifications, notice] });
+        }
       }
     } else {
       setPinError("密码不正确");

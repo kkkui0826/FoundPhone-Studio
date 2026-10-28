@@ -1044,15 +1044,46 @@
         }
       },
       {
-        "id": "grab-food-001",
-        "title": "晚餐订单",
-        "body": "示例订单：晚餐套餐\n状态：尚未下单（演示内容）",
+        "id": "grab-food-kfc-box-001",
+        "title": "KFC The Box招牌",
+        "body": "KFC The Box招牌\n- 上校炸鸡\n- 香辣鸡肉\n- [2]鸡翅\n- 1个蛋挞\n- 薯条\n- 百事可乐\n\n订单金额：฿189",
         "sender": "Grab",
         "kind": "order",
         "time": "今天 18:25",
         "meta": {
           "service": "food",
-          "status": "demo"
+          "status": "demo",
+          "restaurant": "KFC",
+          "amount": "฿189",
+          "currency": "THB",
+          "items": [
+            "上校炸鸡",
+            "香辣鸡肉",
+            "[2]鸡翅",
+            "1个蛋挞",
+            "薯条",
+            "百事可乐"
+          ]
+        }
+      },
+      {
+        "id": "grab-food-bonchon-001",
+        "title": "Bonchon Chicken 6 Pcs.",
+        "body": "Bonchon Chicken 6 Pcs.\n- SOY GARLIC\n- STICKY RICE\n- 无酱料\n\n订单金额：฿199",
+        "sender": "Grab",
+        "kind": "order",
+        "time": "今天 18:30",
+        "meta": {
+          "service": "food",
+          "status": "demo",
+          "restaurant": "Bonchon Chicken",
+          "amount": "฿199",
+          "currency": "THB",
+          "items": [
+            "SOY GARLIC",
+            "STICKY RICE",
+            "无酱料"
+          ]
         }
       }
     ],

@@ -438,6 +438,10 @@ function PhoneRuntime({
                 onUnlock={unlock}
                 onNotificationOpen={(text) => {
                   setPendingNotification(text);
+                  update({
+                    ...runtimeRef.current,
+                    notifications: runtimeRef.current.notifications.filter((notice) => notice !== text),
+                  });
                   beginUnlock();
                 }}
                 onLight={() => setPanel("light")}
@@ -570,6 +574,10 @@ function PhoneRuntime({
                       apps={work.apps}
                       onOpen={(text) => {
                         setPanel("");
+                        update({
+                          ...runtimeRef.current,
+                          notifications: runtimeRef.current.notifications.filter((notice) => notice !== text),
+                        });
                         if (text.startsWith("LINE|")) {
                           setNotificationThread("dada🐱");
                           open("line");
@@ -700,6 +708,10 @@ function PhoneRuntime({
               onClick={() => {
                 const text = banner;
                 setBanner("");
+                update({
+                  ...runtimeRef.current,
+                  notifications: runtimeRef.current.notifications.filter((notice) => notice !== text),
+                });
                 if (text.startsWith("LINE|")) {
                   setNotificationThread("dada🐱");
                   open("line");

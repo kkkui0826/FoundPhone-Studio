@@ -174,7 +174,9 @@ export function initialRuntime(w: Work): Runtime {
     unlocked: [],
     hidden: [],
     completed: [],
-    notifications: [],
+    notifications: w.variables.lineDadaUnlockNotice === true
+      ? ["LINE|Dada🐱:有一条新消息"]
+      : [],
     endings: [],
     choices: [],
     messages: {},

@@ -953,7 +953,6 @@ export function WalletSkin(p: Props) {
             >
               <strong>{i.title}</strong>
               <span>{meta(i, "number", "••••")}</span>
-              <small>{meta(i, "amount", i.sender)}</small>
               <b className="wallet-card-brand">{meta(i, "brand", "VISA")}</b>
             </button>
           ))}

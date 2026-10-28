@@ -1055,15 +1055,7 @@
           "status": "demo",
           "restaurant": "KFC",
           "amount": "฿189",
-          "currency": "THB",
-          "items": [
-            "上校炸鸡",
-            "香辣鸡肉",
-            "[2]鸡翅",
-            "1个蛋挞",
-            "薯条",
-            "百事可乐"
-          ]
+          "currency": "THB"
         }
       },
       {
@@ -1078,12 +1070,7 @@
           "status": "demo",
           "restaurant": "Bonchon Chicken",
           "amount": "฿199",
-          "currency": "THB",
-          "items": [
-            "SOY GARLIC",
-            "STICKY RICE",
-            "无酱料"
-          ]
+          "currency": "THB"
         }
       }
     ],

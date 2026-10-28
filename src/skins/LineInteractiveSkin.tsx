@@ -78,9 +78,9 @@ export function LineInteractiveSkin(p: Props) {
     if (!isDadaThread || storyStage !== 1) return;
     const timer = window.setTimeout(() => {
       const additions = [
-        storyMessage("line-dada-story-02", "mo在看daddy和dada度蜜月", "mo✨", "14:24", true),
-        storyMessage("line-dada-story-03", "oiiiii真是受不了啦究竟是度蜜月还是在工作啦😆", "mo✨", "14:25", true),
-        storyMessage("line-dada-story-04", "视频", "mo✨", "14:26", true, "video", "/photos/dada-honeymoon-video.mp4"),
+        storyMessage("line-dada-story-02", "mo在看daddy和dada度蜜月", "mo✨", "14:25", true),
+        storyMessage("line-dada-story-03", "oiiiii真是受不了啦究竟是度蜜月还是在工作啦😆", "mo✨", "14:26", true),
+        storyMessage("line-dada-story-04", "视频", "mo✨", "14:27", true, "video", "/photos/dada-honeymoon-video.mp4"),
       ];
       setSent(previous => {
         const existing = new Set(previous.map(raw => { try { return (JSON.parse(raw) as Item).id; } catch { return ""; } }));
@@ -93,7 +93,7 @@ export function LineInteractiveSkin(p: Props) {
 
   const send = () => {
     if (!isDadaThread || storyStage !== 0) return;
-    const item = storyMessage("line-dada-story-01", "😬😬", p.owner || "mo✨", "14:23", true);
+    const item = storyMessage("line-dada-story-01", "😬😬", p.owner || "mo✨", "14:24", true);
     setSent(previous => [...previous, JSON.stringify(item)]);
     setDraft("");
     setReplyOpen(false);
@@ -103,11 +103,11 @@ export function LineInteractiveSkin(p: Props) {
   const advanceStory = () => {
     const next = storyStage + 1;
     const messages: Record<number, Item> = {
-      3: storyMessage("line-dada-story-05", "😳😳", "dada🐱", "14:27"),
-      4: storyMessage("line-dada-story-06", "Mo怎么会知道", "dada🐱", "14:28"),
-      5: storyMessage("line-dada-story-07", "这是mo的秘密🤫现场有mo的人脉", "mo✨", "14:29", true),
-      6: storyMessage("line-dada-story-08", "哎呀后面的叔叔都被震惊了啦！看起来完全不想分开呀两个人🫣", "mo✨", "14:30", true),
-      7: storyMessage("line-dada-story-09", "今天的Dada也超suay诶🥰黄色超级适合Daddy和Dada～", "mo✨", "14:31", true),
+      3: storyMessage("line-dada-story-05", "😳😳", "dada🐱", "14:28"),
+      4: storyMessage("line-dada-story-06", "Mo怎么会知道", "dada🐱", "14:29"),
+      5: storyMessage("line-dada-story-07", "这是mo的秘密🤫现场有mo的人脉", "mo✨", "14:30", true),
+      6: storyMessage("line-dada-story-08", "哎呀后面的叔叔都被震惊了啦！看起来完全不想分开呀两个人🫣", "mo✨", "14:31", true),
+      7: storyMessage("line-dada-story-09", "今天的Dada也超suay诶🥰黄色超级适合Daddy和Dada～", "mo✨", "14:32", true),
     };
     const item = messages[next];
     if (item) setSent(previous => {

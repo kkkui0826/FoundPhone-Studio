@@ -5,7 +5,7 @@ import type { Item } from "../schema";
 import { Avatar, Empty, Header, SearchBox, Tabs, type Props } from "./shared";
 
 function lineDateKey(time: string | undefined) {
-  const match = time?.match(/^(\\d{4})-(\\d{2})-(\\d{2})/);
+  const match = time?.match(/^(\d{4})-(\d{2})-(\d{2})/);
   if (match) return match[0];
   return new Date().toLocaleDateString("sv-SE");
 }
@@ -56,15 +56,21 @@ export function LineInteractiveSkin(p: Props) {
     {p.thread ? <>
       <div className="line-peer-bar"><button aria-label="返回聊天列表" onClick={()=>p.onThread("")}><ArrowLeft size={18}/></button><Avatar name={p.thread}/><strong>{p.thread}</strong><span>在线 · 模拟</span></div>
       <div className="catalog-bubbles line-bubbles">
-        <div className="bubble-date">今天</div>
-        {current.map((i)=><div key={i.id} className={i.outgoing || i.sender === (p.owner || "mo✨") ? "catalog-message outgoing" : "catalog-message"}>
-          {!(i.outgoing || i.sender === (p.owner || "mo✨")) && <div className="line-sender-name">{i.sender}</div>}
-          <button onClick={()=>setLiked(liked.includes(i.id)?liked.filter(id=>id!==i.id):[...liked,i.id])}>
-            {i.meta?.messageType === "voice" && <span className="line-voice-transcript"><Mic size={15}/></span>}
-            {i.body}<small>{i.time || "刚刚"} {i.outgoing && <CheckCheck size={10}/>}</small>
-            {liked.includes(i.id) && <span className="line-reaction"><Heart size={12} fill="currentColor"/> 已喜欢</span>}
-          </button>
-        </div>)}
+        {current.map((i, index) => {
+          const dateKey = lineDateKey(i.time);
+          const previousDateKey = index > 0 ? lineDateKey(current[index - 1].time) : "";
+          return <div key={i.id}>
+            {dateKey !== previousDateKey && <div className="bubble-date">{lineDateLabel(dateKey)}</div>}
+            <div className={i.outgoing || i.sender === (p.owner || "mo✨") ? "catalog-message outgoing" : "catalog-message"}>
+              {!(i.outgoing || i.sender === (p.owner || "mo✨")) && <div className="line-sender-name">{i.sender}</div>}
+              <button onClick={()=>setLiked(liked.includes(i.id)?liked.filter(id=>id!==i.id):[...liked,i.id])}>
+                {i.meta?.messageType === "voice" && <span className="line-voice-transcript"><Mic size={15}/></span>}
+                {i.body}<small>{i.time || "刚刚"} {i.outgoing && <CheckCheck size={10}/>}</small>
+                {liked.includes(i.id) && <span className="line-reaction"><Heart size={12} fill="currentColor"/> 已喜欢</span>}
+              </button>
+            </div>
+          </div>;
+        })}
         {!current.length && <Empty items={current} label="还没有消息，发送第一条吧。"/>}
       </div>
       <form className="catalog-composer line-live-composer" onSubmit={e=>{e.preventDefault();send();}}>

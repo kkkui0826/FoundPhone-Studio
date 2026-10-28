@@ -4324,3 +4324,22 @@
   border:0 !important;
   overflow:hidden !important;
 }
+
+
+/* LINE chat date separators */
+.line-interactive .line-bubbles .bubble-date {
+  width: fit-content;
+  max-width: 90%;
+  margin: 12px auto 18px;
+  padding: 5px 10px;
+  border-radius: 12px;
+  background: #91abc7;
+  color: #fff;
+  font-size: 9px;
+  line-height: 1.4;
+  letter-spacing: 0.1px;
+}
+.dark-phone .line-interactive .line-bubbles .bubble-date {
+  background: #4d6278;
+  color: #f2f5f8;
+}

@@ -33,21 +33,13 @@
     "reminders",
     "music",
     "wallet",
-    "health",
-    "find",
     "settings",
-    "bilibili",
-    "netease",
     "instagram",
     "twitter",
     "youtube",
     "line",
     "grab",
-    "facebook",
-    "netflix",
-    "pinterest",
-    "threads",
-    "kakao"
+    "threads"
   ],
   "contacts": [
     {

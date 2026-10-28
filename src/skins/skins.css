@@ -4380,3 +4380,9 @@
 .native-safari .safari-search-history button span {
   flex: 1;
 }
+
+.line-story-continue,
+.line-story-finished { align-self:center; flex-shrink:0; padding:7px 13px; border-radius:15px; color:#65736a; background:#edf2ed; font-size:10px; margin:0 auto 5px; }
+.line-quick-replies { display:flex; gap:8px; padding:6px 12px 9px; background:#f8f9f8; }
+.line-quick-replies button { border:1px solid #bce7c8; background:#fff; border-radius:16px; padding:7px 14px; color:#205b31; font-size:13px; }
+.line-video-message { display:block; width:210px; max-width:100%; max-height:250px; border-radius:8px; }

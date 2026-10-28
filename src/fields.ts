@@ -30,9 +30,10 @@ const fields: Record<string, Field[]> = {
     { key: "humidity", label: "湿度" },
   ],
   wallet: [
-    { key: "amount", label: "金额" },
-    { key: "status", label: "交易状态" },
-    { key: "number", label: "卡片尾号" },
+    { key: "amount", label: "可用余额" },
+    { key: "status", label: "状态" },
+    { key: "number", label: "卡号" },
+    { key: "brand", label: "卡组织" },
   ],
   health: [
     { key: "value", label: "数值", type: "number" },

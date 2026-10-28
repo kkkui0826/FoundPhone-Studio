@@ -141,7 +141,7 @@ export function LineInteractiveSkin(p: Props) {
             {dateKey !== previousDateKey && <div className="bubble-date">{lineDateLabel(dateKey)}</div>}
             <div className={outgoing ? "catalog-message outgoing" : "catalog-message"}>
               {!outgoing && <div className="line-sender-name">{i.sender}</div>}
-              <button onClick={()=>setLiked(liked.includes(i.id)?liked.filter(id=>id!==i.id):[...liked,i.id])}>
+              <button onClick={()=>{if(isDadaThread && storyStage>=2 && storyStage<7){advanceStory();}else{setLiked(liked.includes(i.id)?liked.filter(id=>id!==i.id):[...liked,i.id]);}}}>
                 {i.meta?.messageType === "voice" && <span className="line-voice-transcript"><Mic size={15}/></span>}
                 {i.kind === "video" && i.media ? <Media item={i} className="line-video-message" /> : i.body}
                 <small>{i.time?.slice(-5) || "刚刚"} {outgoing && <CheckCheck size={10}/>}</small>

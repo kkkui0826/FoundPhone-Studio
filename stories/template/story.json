@@ -3,7 +3,7 @@
   "id": "ui-test-phone-v2",
   "title": "捡手机",
   "description": "仅用于界面测试，不含剧情",
-  "revision": 12,
+  "revision": 13,
   "phone": {
     "owner": "mo✨",
     "date": "2026-09-30",
@@ -870,12 +870,20 @@
     ],
     "wallet": [
       {
-        "id": "test-item-wallet",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "id": "jumamo-visa-card",
+        "title": "JUMAMO BANK",
+        "body": "VISA · 1996 1997 2025 0826",
+        "sender": "mo✨",
         "kind": "text",
-        "meta": {}
+        "time": "2026-10-28 12:00",
+        "folder": "",
+        "favorite": false,
+        "meta": {
+          "amount": "999,999,999",
+          "number": "1996 1997 2025 0826",
+          "status": "可用",
+          "brand": "VISA"
+        }
       }
     ],
     "settings": [

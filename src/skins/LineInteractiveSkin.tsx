@@ -4,6 +4,20 @@ import { useSkinState } from "../skinState";
 import type { Item } from "../schema";
 import { Avatar, Empty, Header, SearchBox, Tabs, type Props } from "./shared";
 
+function lineDateKey(time: string | undefined) {
+  const match = time?.match(/^(\\d{4})-(\\d{2})-(\\d{2})/);
+  if (match) return match[0];
+  return new Date().toLocaleDateString("sv-SE");
+}
+
+function lineDateLabel(dateKey: string) {
+  const date = new Date(dateKey + "T12:00:00");
+  if (Number.isNaN(date.getTime())) return dateKey;
+  return date.toLocaleDateString("zh-CN", {
+    year: "numeric", month: "long", day: "numeric", weekday: "long"
+  });
+}
+
 export function LineInteractiveSkin(p: Props) {
   const [activeTab, setActiveTab] = useState("聊天");
   const [search, setSearch] = useState("");
@@ -14,7 +28,14 @@ export function LineInteractiveSkin(p: Props) {
   const all = [...p.items, ...local].filter(i => (i.title+i.body+i.sender).toLowerCase().includes(search.toLowerCase()));
   const pinnedThreads = ["一家三口dada最truy（3）", "daddy juju", "dada🐱"];
   const threads = [...new Set([...pinnedThreads, ...all.map(i => i.title)])].filter(name => name.toLowerCase().includes(search.toLowerCase()));
-  const current = all.filter(i => i.title === p.thread);
+  const current = all.filter(i => i.title === p.thread).sort((a, b) => {
+    const aTime = Date.parse(a.time || "");
+    const bTime = Date.parse(b.time || "");
+    if (Number.isNaN(aTime) && Number.isNaN(bTime)) return 0;
+    if (Number.isNaN(aTime)) return 1;
+    if (Number.isNaN(bTime)) return -1;
+    return aTime - bTime;
+  });
   const send = () => {
     const body = draft.trim();
     if (!body || !p.thread) return;

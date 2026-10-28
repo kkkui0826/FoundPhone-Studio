@@ -3,7 +3,7 @@
   "id": "ui-test-phone-v2",
   "title": "捡手机",
   "description": "仅用于界面测试，不含剧情",
-  "revision": 9,
+  "revision": 10,
   "phone": {
     "owner": "mo✨",
     "date": "2026-09-30",
@@ -164,11 +164,323 @@
     ],
     "photos": [
       {
-        "id": "test-item-photos",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
-        "kind": "text",
+        "id": "gallery-photo-01",
+        "title": "照片 01",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:40",
+        "media": "/photos/相册1.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-02",
+        "title": "照片 02",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:41",
+        "media": "/photos/相册2.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-03",
+        "title": "照片 03",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:42",
+        "media": "/photos/相册3.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-04",
+        "title": "照片 04",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:43",
+        "media": "/photos/相册4.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-05",
+        "title": "照片 05",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:44",
+        "media": "/photos/相册5.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-06",
+        "title": "照片 06",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:45",
+        "media": "/photos/相册6.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-07",
+        "title": "照片 07",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:46",
+        "media": "/photos/相册7.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-08",
+        "title": "照片 08",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:47",
+        "media": "/photos/相册8.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-09",
+        "title": "照片 09",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:48",
+        "media": "/photos/相册9.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-10",
+        "title": "照片 10",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:49",
+        "media": "/photos/相册10.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-11",
+        "title": "照片 11",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:50",
+        "media": "/photos/相册11.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-12",
+        "title": "照片 12",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:51",
+        "media": "/photos/相册12.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-13",
+        "title": "照片 13",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:52",
+        "media": "/photos/相册13.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-14",
+        "title": "照片 14",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:53",
+        "media": "/photos/14.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-15",
+        "title": "照片 15",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:54",
+        "media": "/photos/15.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-16",
+        "title": "照片 16",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:55",
+        "media": "/photos/16.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-17",
+        "title": "照片 17",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:56",
+        "media": "/photos/17.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-18",
+        "title": "照片 18",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:57",
+        "media": "/photos/18.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-19",
+        "title": "照片 19",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:58",
+        "media": "/photos/19.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-20",
+        "title": "照片 20",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 19:59",
+        "media": "/photos/20.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-21",
+        "title": "照片 21",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 20:00",
+        "media": "/photos/21.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-22",
+        "title": "照片 22",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 20:01",
+        "media": "/photos/22.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-23",
+        "title": "照片 23",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 20:02",
+        "media": "/photos/23.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-24",
+        "title": "照片 24",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 20:03",
+        "media": "/photos/24.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-25",
+        "title": "照片 25",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 20:04",
+        "media": "/photos/25.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-26",
+        "title": "照片 26",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 20:05",
+        "media": "/photos/26.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-27",
+        "title": "照片 27",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 20:06",
+        "media": "/photos/27.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-28",
+        "title": "照片 28",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 20:07",
+        "media": "/photos/28.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-29",
+        "title": "照片 29",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 20:08",
+        "media": "/photos/29.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-30",
+        "title": "照片 30",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 20:09",
+        "media": "/photos/30.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-31",
+        "title": "照片 31",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 20:10",
+        "media": "/photos/31.jpg",
+        "meta": {}
+      },
+      {
+        "id": "gallery-photo-32",
+        "title": "照片 32",
+        "body": "",
+        "sender": "mo✨",
+        "kind": "image",
+        "time": "2026-09-30 20:11",
+        "media": "/photos/32.jpg",
         "meta": {}
       }
     ],

@@ -1032,18 +1032,6 @@
     ],
     "grab": [
       {
-        "id": "grab-ride-001",
-        "title": "模拟叫车",
-        "body": "上车点：家附近\n目的地：市中心\n状态：等待确认（演示）",
-        "sender": "Grab",
-        "kind": "order",
-        "time": "今天 18:20",
-        "meta": {
-          "service": "ride",
-          "status": "demo"
-        }
-      },
-      {
         "id": "grab-food-kfc-box-001",
         "title": "KFC The Box招牌",
         "body": "KFC The Box招牌\n- 上校炸鸡\n- 香辣鸡肉\n- [2]鸡翅\n- 1个蛋挞\n- 薯条\n- 百事可乐\n\n订单金额：฿189",

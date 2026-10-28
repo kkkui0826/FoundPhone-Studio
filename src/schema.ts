@@ -196,7 +196,7 @@ export function validateWork(input: unknown): Work {
   return workSchema.parse(input);
 }
 export function safeMedia(value: string) {
-  if (/^\/(?:avatars|photos)\/[a-zA-Z0-9._-]+\.(?:png|jpe?g|webp|gif)$/.test(value)) return value;
+  if (/^\/(?:avatars|photos)\/[^/\\?#<>:"|*\u0000-\u001f]+\.(?:png|jpe?g|webp|gif)$/u.test(value)) return value;
   return /^data:(image\/(png|jpeg|webp|gif)|audio\/(mpeg|mp3|wav|ogg|webm|mp4)|video\/(mp4|webm));base64,[a-zA-Z0-9+/=\s]+$/.test(
     value,
   )

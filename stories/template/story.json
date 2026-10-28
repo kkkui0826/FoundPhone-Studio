@@ -3,7 +3,7 @@
   "id": "ui-test-phone-v2",
   "title": "捡手机",
   "description": "仅用于界面测试，不含剧情",
-  "revision": 10,
+  "revision": 11,
   "phone": {
     "owner": "mo✨",
     "date": "2026-09-30",
@@ -496,12 +496,316 @@
     ],
     "safari": [
       {
-        "id": "test-item-safari",
-        "title": "测试内容",
-        "body": "这是一条测试内容。",
-        "sender": "测试用户",
+        "id": "safari-history-01",
+        "title": "daddy总想把我移出房间怎么办",
+        "body": "daddy总想把我移出房间怎么办",
+        "sender": "mo✨",
         "kind": "text",
-        "meta": {}
+        "time": "2026-10-01 10:12",
+        "folder": "历史记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/daddy%E6%80%BB%E6%83%B3%E6%8A%8A%E6%88%91%E7%A7%BB%E5%87%BA%E6%88%BF%E9%97%B4%E6%80%8E%E4%B9%88%E5%8A%9E"
+        }
+      },
+      {
+        "id": "safari-history-02",
+        "title": "如何巧妙夸Dada suay",
+        "body": "如何巧妙夸Dada suay",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-02 11:12",
+        "folder": "历史记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E5%A6%82%E4%BD%95%E5%B7%A7%E5%A6%99%E5%A4%B8Dada%20suay"
+        }
+      },
+      {
+        "id": "safari-history-03",
+        "title": "口水巾一天洗几次",
+        "body": "口水巾一天洗几次",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-03 12:12",
+        "folder": "历史记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E5%8F%A3%E6%B0%B4%E5%B7%BE%E4%B8%80%E5%A4%A9%E6%B4%97%E5%87%A0%E6%AC%A1"
+        }
+      },
+      {
+        "id": "safari-history-04",
+        "title": "逃学技巧大全",
+        "body": "逃学技巧大全",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-04 13:12",
+        "folder": "历史记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E9%80%83%E5%AD%A6%E6%8A%80%E5%B7%A7%E5%A4%A7%E5%85%A8"
+        }
+      },
+      {
+        "id": "safari-history-05",
+        "title": "帅哥拍照的一百种姿势",
+        "body": "帅哥拍照的一百种姿势",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-05 14:12",
+        "folder": "历史记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E5%B8%85%E5%93%A5%E6%8B%8D%E7%85%A7%E7%9A%84%E4%B8%80%E7%99%BE%E7%A7%8D%E5%A7%BF%E5%8A%BF"
+        }
+      },
+      {
+        "id": "safari-history-06",
+        "title": "老师不让我当帮派老大怎么办",
+        "body": "老师不让我当帮派老大怎么办",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-06 15:12",
+        "folder": "历史记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E8%80%81%E5%B8%88%E4%B8%8D%E8%AE%A9%E6%88%91%E5%BD%93%E5%B8%AE%E6%B4%BE%E8%80%81%E5%A4%A7%E6%80%8E%E4%B9%88%E5%8A%9E"
+        }
+      },
+      {
+        "id": "safari-history-07",
+        "title": "怎么给Daddy和Dada写信",
+        "body": "怎么给Daddy和Dada写信",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-07 16:12",
+        "folder": "历史记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E6%80%8E%E4%B9%88%E7%BB%99Daddy%E5%92%8CDada%E5%86%99%E4%BF%A1"
+        }
+      },
+      {
+        "id": "safari-history-08",
+        "title": "快速学会说话教程",
+        "body": "快速学会说话教程",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-08 17:12",
+        "folder": "历史记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%BC%9A%E8%AF%B4%E8%AF%9D%E6%95%99%E7%A8%8B"
+        }
+      },
+      {
+        "id": "safari-history-09",
+        "title": "一岁小孩不能和爸爸妈妈一起睡觉是正常的吗",
+        "body": "一岁小孩不能和爸爸妈妈一起睡觉是正常的吗",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-09 18:12",
+        "folder": "历史记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E4%B8%80%E5%B2%81%E5%B0%8F%E5%AD%A9%E4%B8%8D%E8%83%BD%E5%92%8C%E7%88%B8%E7%88%B8%E5%A6%88%E5%A6%88%E4%B8%80%E8%B5%B7%E7%9D%A1%E8%A7%89%E6%98%AF%E6%AD%A3%E5%B8%B8%E7%9A%84%E5%90%97"
+        }
+      },
+      {
+        "id": "safari-history-10",
+        "title": "阿尔卑斯棒棒糖是什么？",
+        "body": "阿尔卑斯棒棒糖是什么？",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-10 19:12",
+        "folder": "历史记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E9%98%BF%E5%B0%94%E5%8D%91%E6%96%AF%E6%A3%92%E6%A3%92%E7%B3%96%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"
+        }
+      },
+      {
+        "id": "safari-history-11",
+        "title": "酷哥可以戴蝴蝶结嘛？",
+        "body": "酷哥可以戴蝴蝶结嘛？",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-11 20:12",
+        "folder": "历史记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E9%85%B7%E5%93%A5%E5%8F%AF%E4%BB%A5%E6%88%B4%E8%9D%B4%E8%9D%B6%E7%BB%93%E5%98%9B%EF%BC%9F"
+        }
+      },
+      {
+        "id": "safari-history-12",
+        "title": "姐姐总想要我的蚊香怎么办",
+        "body": "姐姐总想要我的蚊香怎么办",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-12 21:12",
+        "folder": "历史记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E5%A7%90%E5%A7%90%E6%80%BB%E6%83%B3%E8%A6%81%E6%88%91%E7%9A%84%E8%9A%8A%E9%A6%99%E6%80%8E%E4%B9%88%E5%8A%9E"
+        }
+      },
+      {
+        "id": "safari-search-01",
+        "title": "daddy总想把我移出房间怎么办",
+        "body": "daddy总想把我移出房间怎么办",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-01 10:12",
+        "folder": "搜索记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/daddy%E6%80%BB%E6%83%B3%E6%8A%8A%E6%88%91%E7%A7%BB%E5%87%BA%E6%88%BF%E9%97%B4%E6%80%8E%E4%B9%88%E5%8A%9E"
+        }
+      },
+      {
+        "id": "safari-search-02",
+        "title": "如何巧妙夸Dada suay",
+        "body": "如何巧妙夸Dada suay",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-02 11:12",
+        "folder": "搜索记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E5%A6%82%E4%BD%95%E5%B7%A7%E5%A6%99%E5%A4%B8Dada%20suay"
+        }
+      },
+      {
+        "id": "safari-search-03",
+        "title": "口水巾一天洗几次",
+        "body": "口水巾一天洗几次",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-03 12:12",
+        "folder": "搜索记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E5%8F%A3%E6%B0%B4%E5%B7%BE%E4%B8%80%E5%A4%A9%E6%B4%97%E5%87%A0%E6%AC%A1"
+        }
+      },
+      {
+        "id": "safari-search-04",
+        "title": "逃学技巧大全",
+        "body": "逃学技巧大全",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-04 13:12",
+        "folder": "搜索记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E9%80%83%E5%AD%A6%E6%8A%80%E5%B7%A7%E5%A4%A7%E5%85%A8"
+        }
+      },
+      {
+        "id": "safari-search-05",
+        "title": "帅哥拍照的一百种姿势",
+        "body": "帅哥拍照的一百种姿势",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-05 14:12",
+        "folder": "搜索记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E5%B8%85%E5%93%A5%E6%8B%8D%E7%85%A7%E7%9A%84%E4%B8%80%E7%99%BE%E7%A7%8D%E5%A7%BF%E5%8A%BF"
+        }
+      },
+      {
+        "id": "safari-search-06",
+        "title": "老师不让我当帮派老大怎么办",
+        "body": "老师不让我当帮派老大怎么办",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-06 15:12",
+        "folder": "搜索记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E8%80%81%E5%B8%88%E4%B8%8D%E8%AE%A9%E6%88%91%E5%BD%93%E5%B8%AE%E6%B4%BE%E8%80%81%E5%A4%A7%E6%80%8E%E4%B9%88%E5%8A%9E"
+        }
+      },
+      {
+        "id": "safari-search-07",
+        "title": "怎么给Daddy和Dada写信",
+        "body": "怎么给Daddy和Dada写信",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-07 16:12",
+        "folder": "搜索记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E6%80%8E%E4%B9%88%E7%BB%99Daddy%E5%92%8CDada%E5%86%99%E4%BF%A1"
+        }
+      },
+      {
+        "id": "safari-search-08",
+        "title": "快速学会说话教程",
+        "body": "快速学会说话教程",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-08 17:12",
+        "folder": "搜索记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E5%BF%AB%E9%80%9F%E5%AD%A6%E4%BC%9A%E8%AF%B4%E8%AF%9D%E6%95%99%E7%A8%8B"
+        }
+      },
+      {
+        "id": "safari-search-09",
+        "title": "一岁小孩不能和爸爸妈妈一起睡觉是正常的吗",
+        "body": "一岁小孩不能和爸爸妈妈一起睡觉是正常的吗",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-09 18:12",
+        "folder": "搜索记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E4%B8%80%E5%B2%81%E5%B0%8F%E5%AD%A9%E4%B8%8D%E8%83%BD%E5%92%8C%E7%88%B8%E7%88%B8%E5%A6%88%E5%A6%88%E4%B8%80%E8%B5%B7%E7%9D%A1%E8%A7%89%E6%98%AF%E6%AD%A3%E5%B8%B8%E7%9A%84%E5%90%97"
+        }
+      },
+      {
+        "id": "safari-search-10",
+        "title": "阿尔卑斯棒棒糖是什么？",
+        "body": "阿尔卑斯棒棒糖是什么？",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-10 19:12",
+        "folder": "搜索记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E9%98%BF%E5%B0%94%E5%8D%91%E6%96%AF%E6%A3%92%E6%A3%92%E7%B3%96%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"
+        }
+      },
+      {
+        "id": "safari-search-11",
+        "title": "酷哥可以戴蝴蝶结嘛？",
+        "body": "酷哥可以戴蝴蝶结嘛？",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-11 20:12",
+        "folder": "搜索记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E9%85%B7%E5%93%A5%E5%8F%AF%E4%BB%A5%E6%88%B4%E8%9D%B4%E8%9D%B6%E7%BB%93%E5%98%9B%EF%BC%9F"
+        }
+      },
+      {
+        "id": "safari-search-12",
+        "title": "姐姐总想要我的蚊香怎么办",
+        "body": "姐姐总想要我的蚊香怎么办",
+        "sender": "mo✨",
+        "kind": "text",
+        "time": "2026-10-12 21:12",
+        "folder": "搜索记录",
+        "favorite": false,
+        "meta": {
+          "url": "https://search.example/%E5%A7%90%E5%A7%90%E6%80%BB%E6%83%B3%E8%A6%81%E6%88%91%E7%9A%84%E8%9A%8A%E9%A6%99%E6%80%8E%E4%B9%88%E5%8A%9E"
+        }
       }
     ],
     "notes": [

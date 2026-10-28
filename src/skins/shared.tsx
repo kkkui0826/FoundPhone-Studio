@@ -93,10 +93,17 @@ export function Avatar({
   round?: boolean;
   src?: string;
 }) {
+  const rawSrc = safeMedia(src);
+  // GitHub Pages serves this app under /FoundPhone-Studio/, not the domain root.
+  // Resolve public avatar assets against Vite's configured base path so /avatars/*
+  // does not become a broken https://<host>/avatars/* request.
+  const avatarSrc = rawSrc.startsWith("/avatars/")
+    ? `${import.meta.env.BASE_URL}${rawSrc.slice(1)}`
+    : rawSrc;
   return (
     <span className={`catalog-avatar ${round ? "round" : ""}`}>
-      {safeMedia(src) && (safeMedia(src).startsWith("data:image/") || safeMedia(src).startsWith("/avatars/")) ? (
-        <img src={safeMedia(src)} alt="" />
+      {avatarSrc && (avatarSrc.startsWith("data:image/") || avatarSrc.includes("avatars/")) ? (
+        <img src={avatarSrc} alt="" />
       ) : (
         name.slice(0, 1) || "人"
       )}

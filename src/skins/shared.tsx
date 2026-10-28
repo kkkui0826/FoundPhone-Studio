@@ -117,7 +117,11 @@ export function Media({
   item: Item;
   className?: string;
 }) {
-  const src = safeMedia(item.media);
+  const rawSrc = safeMedia(item.media);
+  // Resolve public assets under Vite's base path (e.g. GitHub Pages subpath).
+  const src = rawSrc.startsWith("/photos/")
+    ? `${import.meta.env.BASE_URL}${rawSrc.slice(1)}`
+    : rawSrc;
   return src ? (
     item.kind === "audio" ? (
       <audio className={className} controls src={src} />

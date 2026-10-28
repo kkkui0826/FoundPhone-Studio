@@ -304,7 +304,10 @@ export function CameraSkin(p: Props) {
 }
 export function SafariSkin(p: Props) {
   const [q, setQ] = useState(""),
-    [tab, setTab] = useState("书签");
+    [tab, setTab] = useState("书签"),
+    [searchFocused, setSearchFocused] = useState(false);
+  const history = p.items.filter((i) => i.folder === "历史记录");
+  const searchRecords = p.items.filter((i) => i.folder === "搜索记录");
   const items = p.items
     .filter((i) =>
       (i.title + i.body + meta(i, "url"))
@@ -313,9 +316,12 @@ export function SafariSkin(p: Props) {
     )
     .filter((i) =>
       tab === "书签"
-        ? i.favorite || i.folder !== "历史记录"
+        ? i.favorite || (i.folder !== "历史记录" && i.folder !== "搜索记录")
         : i.folder === "历史记录",
     );
+  const suggestions = searchRecords.filter((i) =>
+    i.title.toLowerCase().includes(q.toLowerCase()),
+  );
   return (
     <div className="catalog-skin native-safari">
       <Header p={p} />
@@ -339,6 +345,8 @@ export function SafariSkin(p: Props) {
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
+          onFocus={() => setSearchFocused(true)}
+          onBlur={() => setTimeout(() => setSearchFocused(false), 120)}
           placeholder="搜索或输入虚构网址"
           aria-label="地址栏"
           onKeyDown={(e) => {
@@ -347,6 +355,18 @@ export function SafariSkin(p: Props) {
         />
         <Search size={16} />
       </label>
+      {searchFocused && !q && (
+        <div className="safari-search-history">
+          <div className="safari-search-history-title">搜索记录</div>
+          {suggestions.map((i) => (
+            <button key={i.id} onMouseDown={() => setQ(i.title)}>
+              <Clock size={14} />
+              <span>{i.title}</span>
+              <ChevronRight size={14} />
+            </button>
+          ))}
+        </div>
+      )}
       <Tabs
         tabs={["书签", "历史记录"]}
         value={tab}

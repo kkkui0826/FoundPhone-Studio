@@ -137,6 +137,26 @@ export function validateLayout(raw: unknown, input: Work) {
     for (const id of removedPreviewApps) delete layout.positions[id];
     layout.previewLayoutRevision = 2;
   }
+  if (w.id === "ui-test-phone-v2" && layout.previewLayoutRevision < 3) {
+    // Synchronize the intentionally removed apps into previously saved device layouts.
+    const removedApps = new Set([
+      "qq", "weibo", "redbook", "alipay", "douyin", "wechat",
+      "taobao", "delivery", "forum", "reddit",
+    ]);
+    for (const app of layout.apps) {
+      if (removedApps.has(app.id)) {
+        app.installed = false;
+        app.visible = false;
+        app.dock = false;
+        app.folder = "";
+        delete layout.positions[app.id];
+      }
+    }
+    layout.order = layout.order.filter((id) => !removedApps.has(id));
+    layout.cleared = layout.cleared.filter((id) => !removedApps.has(id));
+    for (const id of removedApps) delete layout.positions[id];
+    layout.previewLayoutRevision = 3;
+  }
   const entries = homeEntries(layout),
     packed = packHome(entries, layout.positions);
   for (const entry of entries) {

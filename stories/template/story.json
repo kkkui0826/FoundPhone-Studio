@@ -879,10 +879,11 @@
         "folder": "",
         "favorite": false,
         "meta": {
-          "amount": "999,999,999",
+          "amount": "฿999,999,999",
           "number": "1996 1997 2025 0826",
           "status": "可用",
-          "brand": "VISA"
+          "brand": "VISA",
+          "currency": "THB"
         }
       }
     ],

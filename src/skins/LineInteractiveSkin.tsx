@@ -66,7 +66,12 @@ export function LineInteractiveSkin(p: Props) {
       if (Number.isNaN(aTime) && Number.isNaN(bTime)) return 0;
       if (Number.isNaN(aTime)) return 1;
       if (Number.isNaN(bTime)) return -1;
-      return aTime - bTime;
+      if (aTime !== bTime) return aTime - bTime;
+      // Keep Dada's opening message before Mo's quick-reply bubble when both
+      // share the same displayed minute.
+      if (a.id === "line-dada-unlock-20261028-01") return -1;
+      if (b.id === "line-dada-unlock-20261028-01") return 1;
+      return 0;
     });
 
   useEffect(() => {

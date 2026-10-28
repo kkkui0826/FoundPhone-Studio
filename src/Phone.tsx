@@ -141,6 +141,8 @@ function PhoneRuntime({
   const [recent, setRecent] = useState<string[]>([]);
   const appSnapshots = useRef(new Map<string, HTMLElement>());
   const [banner, setBanner] = useState("");
+  const [pendingNotification, setPendingNotification] = useState("");
+  const [notificationThread, setNotificationThread] = useState("");
   const noticesSeen = useRef(0);
   const [contextApp, setContextApp] = useState("");
   const [deviceScale, setDeviceScale] = useState(0.84);
@@ -282,6 +284,12 @@ function PhoneRuntime({
       setLocked(false);
       setPinOpen(false);
       event("password", pin);
+      if (pendingNotification.startsWith("LINE|")) {
+        setNotificationThread("dada🐱");
+        setPendingNotification("");
+        setPanel("");
+        open("line");
+      }
     } else {
       setPinError("密码不正确");
       setPinOpen(true);
@@ -428,6 +436,10 @@ function PhoneRuntime({
                 setPinOpen={setPinOpen}
                 error={pinError}
                 onUnlock={unlock}
+                onNotificationOpen={(text) => {
+                  setPendingNotification(text);
+                  beginUnlock();
+                }}
                 onLight={() => setPanel("light")}
                 onCamera={() => {
                   setQuickCamera(true);
@@ -475,6 +487,7 @@ function PhoneRuntime({
                     );
                   }}
                   work={work}
+                  initialThread={app === "line" ? notificationThread : ""}
                 />
               </AppWindow>
             ) : (
@@ -555,9 +568,12 @@ function PhoneRuntime({
                     <SystemNotifications
                       notices={s.notifications}
                       apps={work.apps}
-                      onOpen={() => {
+                      onOpen={(text) => {
                         setPanel("");
-                        if (locked) beginUnlock();
+                        if (text.startsWith("LINE|")) {
+                          setNotificationThread("dada🐱");
+                          open("line");
+                        } else if (locked) beginUnlock();
                         else if (installedApps.some((a) => a.id === "messages"))
                           open("messages");
                       }}
@@ -682,8 +698,14 @@ function PhoneRuntime({
             <button
               className="device-banner"
               onClick={() => {
+                const text = banner;
                 setBanner("");
-                setPanel("notification");
+                if (text.startsWith("LINE|")) {
+                  setNotificationThread("dada🐱");
+                  open("line");
+                } else {
+                  setPanel("notification");
+                }
               }}
             >
               <AppIcon
@@ -867,6 +889,7 @@ function AppContent({
   onSettings,
   onUi,
   work,
+  initialThread = "",
 }: {
   app: AppPlugin;
   name: string;
@@ -880,9 +903,13 @@ function AppContent({
   onSettings?: () => void;
   onUi?: (key: string, value: UiValue) => void;
   work: Work;
+  initialThread?: string;
 }) {
   const [detail, setDetail] = useState<Item | null>(null);
   const [thread, setThread] = useState("");
+  useEffect(() => {
+    if (app.id === "line" && initialThread) setThread(initialThread);
+  }, [app.id, initialThread]);
   const [tab, setTab] = useState(app.tabs[0]);
   const [q, setQ] = useState("");
   const [pw, setPw] = useState("");
